@@ -18,6 +18,7 @@ class CountryAndLanguageViewController: UIViewController, UITableViewDelegate,UI
     
     //To show all the countries
     var countriesData = Locale.isoRegionCodes.compactMap { Locale.current.localizedString(forRegionCode: $0) }
+    var countryCode = Locale.isoRegionCodes
        
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +44,7 @@ class CountryAndLanguageViewController: UIViewController, UITableViewDelegate,UI
 
         if CountryAndLanguageViewController.select == "Country" {
                        let cell = tableView.dequeueReusableCell(withIdentifier: "countryListCell", for: indexPath) as! CountryListTableViewCell
-                        cell.setCountry(text: countriesData[indexPath.row])
+                        cell.setCountry(text: countriesData[indexPath.row] + flag(country: countryCode[indexPath.row]))
             return cell
         }
             
@@ -59,8 +60,9 @@ class CountryAndLanguageViewController: UIViewController, UITableViewDelegate,UI
         countryListTableView.deselectRow(at: indexPath, animated: true)
          
         if CountryAndLanguageViewController.select == "Country" {
-            let countryName = countriesData[indexPath.row]
-            AccountViewController.finalCountry = countryName
+            let countryName = (countriesData[indexPath.row].prefix(3).uppercased())
+            let flagName = flag(country: countryCode[indexPath.row])
+            AccountViewController.finalCountry = flagName + countryName
         }
             
         else {
@@ -68,6 +70,15 @@ class CountryAndLanguageViewController: UIViewController, UITableViewDelegate,UI
             AccountViewController.finalLanguageName = languageName
         }
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    func flag(country:String) -> String {
+        let base : UInt32 = 127397
+        var s = ""
+        for v in country.unicodeScalars {
+            s.unicodeScalars.append(UnicodeScalar(base + v.value)!)
+        }
+        return String(s)
     }
 }
 

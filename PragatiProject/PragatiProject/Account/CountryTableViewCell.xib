@@ -24,7 +24,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92N-21-5EY">
-                        <rect key="frame" x="55" y="12" width="42" height="20"/>
+                        <rect key="frame" x="55" y="12" width="42" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -36,23 +36,22 @@
                             <constraint firstAttribute="height" constant="23" id="mXu-LL-58m"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FkS-aI-WiR">
-                        <rect key="frame" x="249.5" y="5" width="39.5" height="34"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="52.5" translatesAutoresizingMaskIntoConstraints="NO" id="FkS-aI-WiR">
+                        <rect key="frame" x="247" y="15" width="42" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="FkS-aI-WiR" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="4HK-XY-wiD"/>
                     <constraint firstItem="WGb-LU-UUV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="Dkn-E4-m3b"/>
-                    <constraint firstItem="WGb-LU-UUV" firstAttribute="leading" secondItem="FkS-aI-WiR" secondAttribute="trailing" constant="1" id="GgD-BQ-FnJ"/>
                     <constraint firstItem="92N-21-5EY" firstAttribute="leading" secondItem="Qg5-LU-Y6R" secondAttribute="trailing" constant="10" id="Kav-Ls-JHs"/>
                     <constraint firstItem="Qg5-LU-Y6R" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="7" id="QBn-Qp-UFn"/>
                     <constraint firstItem="92N-21-5EY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="bHY-2h-nFI"/>
+                    <constraint firstItem="WGb-LU-UUV" firstAttribute="leading" secondItem="FkS-aI-WiR" secondAttribute="trailing" constant="1" id="gwL-id-b2I"/>
                     <constraint firstItem="Qg5-LU-Y6R" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="iH3-5q-gW5"/>
                     <constraint firstAttribute="trailing" secondItem="WGb-LU-UUV" secondAttribute="trailing" id="tgU-LN-lkO"/>
-                    <constraint firstItem="FkS-aI-WiR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="yP1-yh-VLp"/>
+                    <constraint firstItem="FkS-aI-WiR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="tkV-Xv-M1a"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

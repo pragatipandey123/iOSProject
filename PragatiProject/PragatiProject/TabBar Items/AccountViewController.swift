@@ -15,6 +15,8 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var signInBtn: UIButton!
     @IBOutlet weak var joinBtn: UIButton!
     
+    
+    
     public static var finalCountry : String = " "
     public static var finalLanguageName : String = " "
     
@@ -134,7 +136,7 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
                let cell = accountTableView.dequeueReusableCell(withIdentifier: "countryCell", for: indexPath) as! CountryTableViewCell
                cell.setImageCountry(image: cellImageArray[1][0])
                cell.setLabelCountry(text: cellLabelArray[1][0])
-              cell.setFinalCountry(text: AccountViewController.finalCountry)
+            cell.setFinalCountry(text: AccountViewController.finalCountry)
              return cell
            }
            
