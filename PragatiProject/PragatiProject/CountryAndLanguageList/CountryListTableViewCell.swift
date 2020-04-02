@@ -12,6 +12,7 @@ class CountryListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var countryListLabel: UILabel!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -26,5 +27,6 @@ class CountryListTableViewCell: UITableViewCell {
     func setCountry(text: String) {
         countryListLabel.text = text
     }
+    
     
 }

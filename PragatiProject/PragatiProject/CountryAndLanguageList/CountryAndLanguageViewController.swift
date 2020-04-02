@@ -13,7 +13,10 @@ class CountryAndLanguageViewController: UIViewController, UITableViewDelegate,UI
     @IBOutlet weak var countryListTableView: UITableView!
     public static var select = ""
     
+    //TO show all languages
     let language = Locale.isoLanguageCodes.compactMap { Locale.current.localizedString(forLanguageCode: $0) }
+    
+    //To show all the countries
     var countriesData = Locale.isoRegionCodes.compactMap { Locale.current.localizedString(forRegionCode: $0) }
        
     override func viewDidLoad() {
@@ -28,6 +31,10 @@ class CountryAndLanguageViewController: UIViewController, UITableViewDelegate,UI
                countryListTableView.register(nib2, forCellReuseIdentifier: "languageList")
     }
     
+    
+
+    //MARK: TABLE VIEW DELEGATES AND DATA SOURCES
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return countriesData.count
     }
@@ -36,44 +43,33 @@ class CountryAndLanguageViewController: UIViewController, UITableViewDelegate,UI
 
         if CountryAndLanguageViewController.select == "Country" {
                        let cell = tableView.dequeueReusableCell(withIdentifier: "countryListCell", for: indexPath) as! CountryListTableViewCell
-                                      
                         cell.setCountry(text: countriesData[indexPath.row])
             return cell
-                      
-            }
-            
-        else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "languageList", for: indexPath) as! LanguageListTableViewCell
-            
-            cell.setLanguage(text: language[indexPath.row])
-            
-            return cell
-            
         }
+            
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "languageList", for: indexPath) as! LanguageListTableViewCell
+            cell.setLanguage(text: language[indexPath.row])
+            return cell
     }
+ }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         countryListTableView.deselectRow(at: indexPath, animated: true)
          
         if CountryAndLanguageViewController.select == "Country" {
-            AccountViewController.finalCountry = countriesData[indexPath.row]
-            
+            let countryName = countriesData[indexPath.row]
+            AccountViewController.finalCountry = countryName
         }
             
         else {
-           
-            AccountViewController.finalLanguageName = language[indexPath.row]
+            let languageName = (language[indexPath.row].prefix(3).uppercased())
+            AccountViewController.finalLanguageName = languageName
         }
         self.navigationController?.popViewController(animated: true)
-       
     }
-        
-        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            
-            return 60
-        }
-        
-    }
+}
 
                        
         

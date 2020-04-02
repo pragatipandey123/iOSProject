@@ -14,6 +14,7 @@ class CountryTableViewCell: UITableViewCell {
     @IBOutlet weak var labelCountryCell: UILabel!
     @IBOutlet weak var finalCountryLabel: UILabel!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -34,5 +35,7 @@ class CountryTableViewCell: UITableViewCell {
     func setFinalCountry(text: String) {
         finalCountryLabel.text = text
     }
+    
+    
     
 }

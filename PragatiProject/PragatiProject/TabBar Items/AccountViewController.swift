@@ -12,23 +12,20 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBOutlet weak var accountImage: UIImageView!
     @IBOutlet weak var accountTableView: UITableView!
-   
-   
-    public static var finalCountry : String = "IND"
-    public static var finalLanguageName : String = "ENG"
-
+    @IBOutlet weak var signInBtn: UIButton!
+    @IBOutlet weak var joinBtn: UIButton!
+    
+    public static var finalCountry : String = " "
+    public static var finalLanguageName : String = " "
     
     let cellLabelArray = [ ["Track Order", "Size Chart", "Notifications", "Store Location"], ["Country", "Language", "About Us", "FAQ", "Shipping & Returns"] ]
     let cellImageArray = [ [#imageLiteral(resourceName: "TrackOrder"), #imageLiteral(resourceName: "SizeChart"), #imageLiteral(resourceName: "Notifications"), #imageLiteral(resourceName: "StoreLocator")], [ #imageLiteral(resourceName: "Country"), #imageLiteral(resourceName: "Language"), #imageLiteral(resourceName: "AboutUs"), #imageLiteral(resourceName: "FAQ"), #imageLiteral(resourceName: "ShippingAndReturn")] ]
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         accountTableView.delegate = self
         accountTableView.dataSource = self
-        accountTableView.reloadData()
-        
         roundedShape()
     
         let nib1 = UINib(nibName: "AccountTableViewCell", bundle: nil)
@@ -43,6 +40,12 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(clicking))
         accountImage.isUserInteractionEnabled = true
         accountImage.addGestureRecognizer(singleTap)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        accountTableView.reloadData() // to relaod the data everytime
     }
     
     // to make the account image rounded shape
@@ -104,42 +107,49 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
             }
         }
     
+    //SignIn Button action to go to signIn page
+    @IBAction func signIn(_ sender : UIButton){
+       let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+     let vc = storyboard.instantiateViewController(withIdentifier: "SignInViewController")
+    self.navigationController!.pushViewController(vc, animated: true)
+    }
+    
+    //Join Button action to go to join page
+    @IBAction func join(_ sender : UIButton){
+       let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+     let vc = storyboard.instantiateViewController(withIdentifier: "JoinViewController")
+    self.navigationController!.pushViewController(vc, animated: true)
+    }
     
     
+   //MARK: TABLE VIEW DELEGATES AND DATA SOURCES
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellLabelArray[section].count
     }
     
-    
+    //cell for row at index path
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
          if indexPath.section == 1 && indexPath.row == 0 {
                let cell = accountTableView.dequeueReusableCell(withIdentifier: "countryCell", for: indexPath) as! CountryTableViewCell
-            
                cell.setImageCountry(image: cellImageArray[1][0])
                cell.setLabelCountry(text: cellLabelArray[1][0])
               cell.setFinalCountry(text: AccountViewController.finalCountry)
-            print(AccountViewController.finalCountry)
-               return cell
+             return cell
            }
            
            else if indexPath.section == 1 && indexPath.row == 1 {
-            
                let cell = accountTableView.dequeueReusableCell(withIdentifier: "languageCell", for: indexPath) as! LanguageTableViewCell
-            
                cell.setImageLanguage(image: cellImageArray[1][1])
                cell.setLabelLanguage(text: cellLabelArray[1][1])
-            cell.setFinalLanguage(text: AccountViewController.finalLanguageName)
-             print(AccountViewController.finalLanguageName)
-               return cell
+               cell.setFinalLanguage(text: String(AccountViewController.finalLanguageName.prefix(3)))
+            return cell
            }
-           
+    
            else {
-                      
                    let cell = accountTableView.dequeueReusableCell(withIdentifier: "accountPageCell", for: indexPath) as! AccountTableViewCell
                   cell.setLabel(text:cellLabelArray[indexPath.section][indexPath.row])
                   cell.setImage(image: cellImageArray[indexPath.section][indexPath.row])
-                 
                return cell
            }
     }
@@ -149,17 +159,19 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
         return " "
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
-   
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10.0
+    }
+    
+   //did select row at index path
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
-        accountTableView.deselectRow(at: indexPath, animated: true)
+       accountTableView.deselectRow(at: indexPath, animated: true)
         
         if indexPath.section == 1 && indexPath.row == 0 {
 
@@ -167,7 +179,6 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "CountryAndLanguageViewController")
                 self.navigationController?.pushViewController(vc, animated: true)
-
             }
 
         else if indexPath.section == 1 && indexPath.row == 1 {

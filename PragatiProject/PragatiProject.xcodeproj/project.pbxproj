@@ -133,13 +133,9 @@
 				0A398273242CEA8000CF0729 /* SceneDelegate.swift */,
 				0A398275242CEA8000CF0729 /* ViewController.swift */,
 				0A398277242CEA8000CF0729 /* Main.storyboard */,
-				0A3C08B42434A228007B00F9 /* CountryAndLanguageViewController.swift */,
-				0A3C08BA2434BD9D007B00F9 /* LanguageListTableViewCell.swift */,
-				0A3C08BB2434BD9D007B00F9 /* LanguageListTableViewCell.xib */,
-				0A3C08B62434A754007B00F9 /* CountryListTableViewCell.swift */,
-				0A3C08B72434A754007B00F9 /* CountryListTableViewCell.xib */,
 				0A3982A6242D056B00CF0729 /* TabBar Items */,
 				0A3982AB242D062C00CF0729 /* Account */,
+				0A4387682435DB64009012EE /* CountryAndLanguageList */,
 				0A39827D242CEA8200CF0729 /* Assets.xcassets */,
 				0A39827F242CEA8200CF0729 /* LaunchScreen.storyboard */,
 				0A398282242CEA8200CF0729 /* Info.plist */,
@@ -187,6 +183,18 @@
 				0A3982A9242D061700CF0729 /* SignInViewController.swift */,
 			);
 			path = Account;
+			sourceTree = "<group>";
+		};
+		0A4387682435DB64009012EE /* CountryAndLanguageList */ = {
+			isa = PBXGroup;
+			children = (
+				0A3C08B42434A228007B00F9 /* CountryAndLanguageViewController.swift */,
+				0A3C08BA2434BD9D007B00F9 /* LanguageListTableViewCell.swift */,
+				0A3C08BB2434BD9D007B00F9 /* LanguageListTableViewCell.xib */,
+				0A3C08B62434A754007B00F9 /* CountryListTableViewCell.swift */,
+				0A3C08B72434A754007B00F9 /* CountryListTableViewCell.xib */,
+			);
+			path = CountryAndLanguageList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

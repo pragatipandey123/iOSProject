@@ -126,6 +126,9 @@
                                         <state key="normal" title="SIGN IN">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signIn:" destination="TMV-Gv-2Y5" eventType="touchUpInside" id="qSj-gW-Stk"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJm-6n-qfa">
                                         <rect key="frame" x="50.5" y="0.0" width="83" height="30"/>
@@ -139,6 +142,9 @@
                                         <state key="normal" title="JOIN">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="join:" destination="TMV-Gv-2Y5" eventType="touchUpInside" id="Bxi-IJ-7YK"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -170,6 +176,8 @@
                     <connections>
                         <outlet property="accountImage" destination="WeY-hz-GXB" id="TyP-D7-C15"/>
                         <outlet property="accountTableView" destination="FkI-bj-gHl" id="k9C-nn-mRc"/>
+                        <outlet property="joinBtn" destination="9LL-QV-zvG" id="k7T-5j-ZUJ"/>
+                        <outlet property="signInBtn" destination="Asj-9s-Qg7" id="cGe-JX-mfK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iSw-R5-kvh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -230,13 +238,25 @@
                     <view key="view" contentMode="scaleToFill" id="gb3-KH-ADg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGNIN PAGE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjf-n6-V8L">
+                                <rect key="frame" x="130.5" y="432.5" width="153.5" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vjf-n6-V8L" firstAttribute="centerX" secondItem="gb3-KH-ADg" secondAttribute="centerX" id="8A7-EH-fdE"/>
+                            <constraint firstItem="vjf-n6-V8L" firstAttribute="centerY" secondItem="gb3-KH-ADg" secondAttribute="centerY" id="Saf-hG-5T0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="q1x-JG-AuW"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I47-uK-pZO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3852" y="-68"/>
+            <point key="canvasLocation" x="3850.7246376811595" y="-68.303571428571431"/>
         </scene>
         <!--Join View Controller-->
         <scene sceneID="Snh-hR-Mu8">
@@ -246,36 +266,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cD4-IV-VVX">
-                                <rect key="frame" x="87" y="146" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4J2-Ea-6Q1">
-                                <rect key="frame" x="59" y="372" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KbP-R1-FCQ">
-                                <rect key="frame" x="59" y="431" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j8H-Fc-1da">
-                                <rect key="frame" x="59" y="525" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nIe-e7-LOS">
-                                <rect key="frame" x="59" y="627" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JOIN PAGE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gyb-NE-7a1">
+                                <rect key="frame" x="134" y="430" width="146" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Gyb-NE-7a1" firstAttribute="centerY" secondItem="f8i-kt-yAV" secondAttribute="centerY" id="hvv-DR-Ft8"/>
+                            <constraint firstItem="Gyb-NE-7a1" firstAttribute="centerX" secondItem="f8i-kt-yAV" secondAttribute="centerX" id="tq5-lf-KfQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="tCw-9I-CVo"/>
                     </view>
                 </viewController>
