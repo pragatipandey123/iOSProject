@@ -22,15 +22,25 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ds4-kk-EVn">
+                        <rect key="frame" x="90" y="11" width="44" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="PYc-tb-lz5"/>
+                            <constraint firstAttribute="width" constant="44" id="e6c-jm-8a7"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="CIY-2g-gIq" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="A6G-z9-3uv"/>
+                    <constraint firstItem="ds4-kk-EVn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="LQI-Ud-lyV"/>
                     <constraint firstItem="CIY-2g-gIq" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Mht-Um-xVT"/>
+                    <constraint firstItem="CIY-2g-gIq" firstAttribute="leading" secondItem="ds4-kk-EVn" secondAttribute="trailing" constant="5" id="YFG-PU-qOQ"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="countryListLabel" destination="CIY-2g-gIq" id="iP4-L5-5Oh"/>
+                <outlet property="flagList" destination="ds4-kk-EVn" id="gUM-ug-aWp"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="113.83928571428571"/>
         </tableViewCell>

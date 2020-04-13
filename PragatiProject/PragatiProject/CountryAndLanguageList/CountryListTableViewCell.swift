@@ -11,7 +11,8 @@ import UIKit
 class CountryListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var countryListLabel: UILabel!
-    
+   
+    @IBOutlet weak var flagList: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +27,10 @@ class CountryListTableViewCell: UITableViewCell {
     
     func setCountry(text: String) {
         countryListLabel.text = text
+    }
+    func setFlag(image: UIImage) {
+    
+        flagList.image = image
     }
     
     

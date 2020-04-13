@@ -18,6 +18,7 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     
     public static var finalCountry : String = " "
+    var finalFlag = #imageLiteral(resourceName: "Country")
     public static var finalLanguageName : String = " "
     
     let cellLabelArray = [ ["Track Order", "Size Chart", "Notifications", "Store Location"], ["Country", "Language", "About Us", "FAQ", "Shipping & Returns"] ]
@@ -137,6 +138,20 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
                cell.setImageCountry(image: cellImageArray[1][0])
                cell.setLabelCountry(text: cellLabelArray[1][0])
             cell.setFinalCountry(text: AccountViewController.finalCountry)
+            
+            if let url = URL(string: "https://www.countryflags.io/\(AccountViewController.finalCountry)/flat/64.png") {
+                
+                URLSession.shared.dataTask(with: url) { (data, response, error) in
+                    if let data = data {
+                        DispatchQueue.main.async {
+                            
+                            cell.setCountryFlagImageView(image: UIImage(data: data) ?? self.finalFlag)
+                            cell.finalFlagImage.contentMode = .scaleAspectFill
+                        }
+                    }
+                }.resume()
+            }
+            print(finalFlag)
              return cell
            }
            

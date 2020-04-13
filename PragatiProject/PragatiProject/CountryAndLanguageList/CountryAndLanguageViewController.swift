@@ -12,13 +12,14 @@ class CountryAndLanguageViewController: UIViewController, UITableViewDelegate,UI
     
     @IBOutlet weak var countryListTableView: UITableView!
     public static var select = ""
+     var flag = #imageLiteral(resourceName: "Country")
     
     //TO show all languages
     let language = Locale.isoLanguageCodes.compactMap { Locale.current.localizedString(forLanguageCode: $0) }
     
     //To show all the countries
     var countriesData = Locale.isoRegionCodes.compactMap { Locale.current.localizedString(forRegionCode: $0) }
-    var countryCode = Locale.isoRegionCodes
+     var countryCode = Locale.isoRegionCodes
        
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +45,20 @@ class CountryAndLanguageViewController: UIViewController, UITableViewDelegate,UI
 
         if CountryAndLanguageViewController.select == "Country" {
                        let cell = tableView.dequeueReusableCell(withIdentifier: "countryListCell", for: indexPath) as! CountryListTableViewCell
-                        cell.setCountry(text: countriesData[indexPath.row] + flag(country: countryCode[indexPath.row]))
+                        cell.setCountry(text: countriesData[indexPath.row])
+            if let url = URL(string: "https://www.countryflags.io/\(countryCode[indexPath.row])/shiny/64.png") {
+
+               URLSession.shared.dataTask(with: url) { (data, response, error) in
+                   if let data = data {
+                       DispatchQueue.main.async {
+
+                           //here i pass image to cell.FlagImage
+                           cell.setFlag(image: UIImage(data: data) ?? self.flag)
+                           cell.flagList.contentMode = .scaleAspectFill
+                       }
+                   }
+               }.resume()
+           }
             return cell
         }
             
@@ -61,8 +75,8 @@ class CountryAndLanguageViewController: UIViewController, UITableViewDelegate,UI
          
         if CountryAndLanguageViewController.select == "Country" {
             let countryName = (countriesData[indexPath.row].prefix(3).uppercased())
-            let flagName = flag(country: countryCode[indexPath.row])
-            AccountViewController.finalCountry = flagName + countryName
+            
+            AccountViewController.finalCountry = countryName
         }
             
         else {
