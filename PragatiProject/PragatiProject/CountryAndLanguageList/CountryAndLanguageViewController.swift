@@ -46,13 +46,13 @@ class CountryAndLanguageViewController: UIViewController, UITableViewDelegate,UI
         if CountryAndLanguageViewController.select == "Country" {
                        let cell = tableView.dequeueReusableCell(withIdentifier: "countryListCell", for: indexPath) as! CountryListTableViewCell
                         cell.setCountry(text: countriesData[indexPath.row])
+            // using API for flags
             if let url = URL(string: "https://www.countryflags.io/\(countryCode[indexPath.row])/shiny/64.png") {
 
                URLSession.shared.dataTask(with: url) { (data, response, error) in
                    if let data = data {
                        DispatchQueue.main.async {
-
-                           //here i pass image to cell.FlagImage
+                              //passing an image
                            cell.setFlag(image: UIImage(data: data) ?? self.flag)
                            cell.flagList.contentMode = .scaleAspectFill
                        }
@@ -74,7 +74,7 @@ class CountryAndLanguageViewController: UIViewController, UITableViewDelegate,UI
         countryListTableView.deselectRow(at: indexPath, animated: true)
          
         if CountryAndLanguageViewController.select == "Country" {
-            let countryName = (countriesData[indexPath.row].prefix(3).uppercased())
+            let countryName = (countryCode[indexPath.row].uppercased())
             
             AccountViewController.finalCountry = countryName
         }
@@ -85,17 +85,8 @@ class CountryAndLanguageViewController: UIViewController, UITableViewDelegate,UI
         }
         self.navigationController?.popViewController(animated: true)
     }
-    
-    func flag(country:String) -> String {
-        let base : UInt32 = 127397
-        var s = ""
-        for v in country.unicodeScalars {
-            s.unicodeScalars.append(UnicodeScalar(base + v.value)!)
-        }
-        return String(s)
-    }
-}
 
+}
                        
         
                        

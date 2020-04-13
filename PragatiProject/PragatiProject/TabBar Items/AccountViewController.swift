@@ -144,14 +144,12 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
                 URLSession.shared.dataTask(with: url) { (data, response, error) in
                     if let data = data {
                         DispatchQueue.main.async {
-                            
                             cell.setCountryFlagImageView(image: UIImage(data: data) ?? self.finalFlag)
                             cell.finalFlagImage.contentMode = .scaleAspectFill
                         }
                     }
                 }.resume()
             }
-            print(finalFlag)
              return cell
            }
            
