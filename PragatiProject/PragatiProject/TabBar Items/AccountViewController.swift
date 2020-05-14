@@ -21,7 +21,7 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
     var finalFlag = #imageLiteral(resourceName: "Country")
     public static var finalLanguageName : String = " "
     
-    let cellLabelArray = [ ["Track Order", "Size Chart", "Notifications", "Store Location"], ["Country", "Language", "About Us", "FAQ", "Shipping & Returns"] ]
+    let cellLabelArray = [ ["Location", "Movies", "Notifications", "My Circle/Employees"], ["Country", "Language", "About Us", "FAQ", "Change Theme"] ]
     let cellImageArray = [ [#imageLiteral(resourceName: "TrackOrder"), #imageLiteral(resourceName: "SizeChart"), #imageLiteral(resourceName: "Notifications"), #imageLiteral(resourceName: "StoreLocator")], [ #imageLiteral(resourceName: "Country"), #imageLiteral(resourceName: "Language"), #imageLiteral(resourceName: "AboutUs"), #imageLiteral(resourceName: "FAQ"), #imageLiteral(resourceName: "ShippingAndReturn")] ]
     
     override func viewDidLoad() {
@@ -187,6 +187,12 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
    //did select row at index path
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        accountTableView.deselectRow(at: indexPath, animated: true)
+        
+        if indexPath.section == 0 && indexPath.row == 0 {
+            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "LocationViewController")
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         
         if indexPath.section == 1 && indexPath.row == 0 {
 

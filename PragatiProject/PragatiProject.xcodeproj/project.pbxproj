@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A19FC16246D18F400341A27 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A19FC15246D18F400341A27 /* LocationViewController.swift */; };
 		0A398272242CEA8000CF0729 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A398271242CEA8000CF0729 /* AppDelegate.swift */; };
 		0A398274242CEA8000CF0729 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A398273242CEA8000CF0729 /* SceneDelegate.swift */; };
 		0A398276242CEA8000CF0729 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A398275242CEA8000CF0729 /* ViewController.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A19FC15246D18F400341A27 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		0A39826E242CEA8000CF0729 /* PragatiProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PragatiProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A398271242CEA8000CF0729 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A398273242CEA8000CF0729 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -175,10 +177,7 @@
 			children = (
 				0AC7E36F2433589E00BBCF87 /* AccountTableViewCell.swift */,
 				0AC7E3702433589E00BBCF87 /* AccountTableViewCell.xib */,
-				0AC7E3742433640E00BBCF87 /* CountryTableViewCell.swift */,
-				0AC7E3752433640E00BBCF87 /* CountryTableViewCell.xib */,
-				0AC7E3782433644000BBCF87 /* LanguageTableViewCell.swift */,
-				0AC7E3792433644000BBCF87 /* LanguageTableViewCell.xib */,
+				0A19FC15246D18F400341A27 /* LocationViewController.swift */,
 				0A3982A7242D05EE00CF0729 /* JoinViewController.swift */,
 				0A3982A9242D061700CF0729 /* SignInViewController.swift */,
 			);
@@ -188,6 +187,10 @@
 		0A4387682435DB64009012EE /* CountryAndLanguageList */ = {
 			isa = PBXGroup;
 			children = (
+				0AC7E3742433640E00BBCF87 /* CountryTableViewCell.swift */,
+				0AC7E3752433640E00BBCF87 /* CountryTableViewCell.xib */,
+				0AC7E3782433644000BBCF87 /* LanguageTableViewCell.swift */,
+				0AC7E3792433644000BBCF87 /* LanguageTableViewCell.xib */,
 				0A3C08B42434A228007B00F9 /* CountryAndLanguageViewController.swift */,
 				0A3C08BA2434BD9D007B00F9 /* LanguageListTableViewCell.swift */,
 				0A3C08BB2434BD9D007B00F9 /* LanguageListTableViewCell.xib */,
@@ -340,6 +343,7 @@
 				0AC7E37C2433740800BBCF87 /* AccountTableViewCell.swift in Sources */,
 				0AC7E37A2433644000BBCF87 /* LanguageTableViewCell.swift in Sources */,
 				0A3982A5242D056300CF0729 /* AccountViewController.swift in Sources */,
+				0A19FC16246D18F400341A27 /* LocationViewController.swift in Sources */,
 				0AC7E3762433640E00BBCF87 /* CountryTableViewCell.swift in Sources */,
 				0A3C08B82434A754007B00F9 /* CountryListTableViewCell.swift in Sources */,
 				0A398272242CEA8000CF0729 /* AppDelegate.swift in Sources */,
