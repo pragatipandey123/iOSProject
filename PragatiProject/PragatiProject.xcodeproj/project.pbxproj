@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0A19FC16246D18F400341A27 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A19FC15246D18F400341A27 /* LocationViewController.swift */; };
+		0A385061246EA13600B0D8EB /* EmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A385060246EA13600B0D8EB /* EmployeesViewController.swift */; };
+		0A385064246EA40300B0D8EB /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A385062246EA40300B0D8EB /* EmployeeTableViewCell.swift */; };
+		0A385065246EA40300B0D8EB /* EmployeeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A385063246EA40300B0D8EB /* EmployeeTableViewCell.xib */; };
 		0A398272242CEA8000CF0729 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A398271242CEA8000CF0729 /* AppDelegate.swift */; };
 		0A398274242CEA8000CF0729 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A398273242CEA8000CF0729 /* SceneDelegate.swift */; };
 		0A398276242CEA8000CF0729 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A398275242CEA8000CF0729 /* ViewController.swift */; };
@@ -25,12 +28,16 @@
 		0A3C08B92434A754007B00F9 /* CountryListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C08B72434A754007B00F9 /* CountryListTableViewCell.xib */; };
 		0A3C08BC2434BD9D007B00F9 /* LanguageListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C08BA2434BD9D007B00F9 /* LanguageListTableViewCell.swift */; };
 		0A3C08BD2434BD9D007B00F9 /* LanguageListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C08BB2434BD9D007B00F9 /* LanguageListTableViewCell.xib */; };
+		0A3F9E0D246D7DA8009B1669 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3F9E0C246D7DA8009B1669 /* HomeViewController.swift */; };
 		0AC7E3762433640E00BBCF87 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC7E3742433640E00BBCF87 /* CountryTableViewCell.swift */; };
 		0AC7E3772433640E00BBCF87 /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AC7E3752433640E00BBCF87 /* CountryTableViewCell.xib */; };
 		0AC7E37A2433644000BBCF87 /* LanguageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC7E3782433644000BBCF87 /* LanguageTableViewCell.swift */; };
 		0AC7E37B2433644000BBCF87 /* LanguageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AC7E3792433644000BBCF87 /* LanguageTableViewCell.xib */; };
 		0AC7E37C2433740800BBCF87 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC7E36F2433589E00BBCF87 /* AccountTableViewCell.swift */; };
 		0AC7E37D243379DE00BBCF87 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AC7E3702433589E00BBCF87 /* AccountTableViewCell.xib */; };
+		4BC25E42F3EE998691BA333E /* Pods_PragatiProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F5C7C6C7F2890F7C7D751B /* Pods_PragatiProject.framework */; };
+		4FDC18FF4F13F39C8A6C256E /* Pods_PragatiProject_PragatiProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79F61D634A7884863148023 /* Pods_PragatiProject_PragatiProjectUITests.framework */; };
+		8E1DA511C513DAEF291DCDF3 /* Pods_PragatiProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7B7B78544BB56D7466582F0 /* Pods_PragatiProjectTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +59,9 @@
 
 /* Begin PBXFileReference section */
 		0A19FC15246D18F400341A27 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		0A385060246EA13600B0D8EB /* EmployeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesViewController.swift; sourceTree = "<group>"; };
+		0A385062246EA40300B0D8EB /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
+		0A385063246EA40300B0D8EB /* EmployeeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeTableViewCell.xib; sourceTree = "<group>"; };
 		0A39826E242CEA8000CF0729 /* PragatiProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PragatiProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A398271242CEA8000CF0729 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A398273242CEA8000CF0729 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,12 +85,22 @@
 		0A3C08B72434A754007B00F9 /* CountryListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryListTableViewCell.xib; sourceTree = "<group>"; };
 		0A3C08BA2434BD9D007B00F9 /* LanguageListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageListTableViewCell.swift; sourceTree = "<group>"; };
 		0A3C08BB2434BD9D007B00F9 /* LanguageListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LanguageListTableViewCell.xib; sourceTree = "<group>"; };
+		0A3F9E0C246D7DA8009B1669 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0AC7E36F2433589E00BBCF87 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		0AC7E3702433589E00BBCF87 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
 		0AC7E3742433640E00BBCF87 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
 		0AC7E3752433640E00BBCF87 /* CountryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
 		0AC7E3782433644000BBCF87 /* LanguageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewCell.swift; sourceTree = "<group>"; };
 		0AC7E3792433644000BBCF87 /* LanguageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LanguageTableViewCell.xib; sourceTree = "<group>"; };
+		27F5C7C6C7F2890F7C7D751B /* Pods_PragatiProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PragatiProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		529781C8F42C4E55D85C5AAE /* Pods-PragatiProject-PragatiProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PragatiProject-PragatiProjectUITests.release.xcconfig"; path = "Target Support Files/Pods-PragatiProject-PragatiProjectUITests/Pods-PragatiProject-PragatiProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6166AB99B6EB3016E8335655 /* Pods-PragatiProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PragatiProjectTests.release.xcconfig"; path = "Target Support Files/Pods-PragatiProjectTests/Pods-PragatiProjectTests.release.xcconfig"; sourceTree = "<group>"; };
+		64A4CCDB3B5984F4BE0996CB /* Pods-PragatiProject-PragatiProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PragatiProject-PragatiProjectUITests.debug.xcconfig"; path = "Target Support Files/Pods-PragatiProject-PragatiProjectUITests/Pods-PragatiProject-PragatiProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A86E1AF5D765DF5C7543B882 /* Pods-PragatiProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PragatiProject.release.xcconfig"; path = "Target Support Files/Pods-PragatiProject/Pods-PragatiProject.release.xcconfig"; sourceTree = "<group>"; };
+		C6E4FDDA7CC17370C77366BB /* Pods-PragatiProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PragatiProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-PragatiProjectTests/Pods-PragatiProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C7B7B78544BB56D7466582F0 /* Pods_PragatiProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PragatiProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D79F61D634A7884863148023 /* Pods_PragatiProject_PragatiProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PragatiProject_PragatiProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF3F644C7848AAA015F78AF9 /* Pods-PragatiProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PragatiProject.debug.xcconfig"; path = "Target Support Files/Pods-PragatiProject/Pods-PragatiProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BC25E42F3EE998691BA333E /* Pods_PragatiProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E1DA511C513DAEF291DCDF3 /* Pods_PragatiProjectTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,12 +124,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FDC18FF4F13F39C8A6C256E /* Pods_PragatiProject_PragatiProjectUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A385066246EA42800B0D8EB /* Employees */ = {
+			isa = PBXGroup;
+			children = (
+				0A385062246EA40300B0D8EB /* EmployeeTableViewCell.swift */,
+				0A385063246EA40300B0D8EB /* EmployeeTableViewCell.xib */,
+			);
+			path = Employees;
+			sourceTree = "<group>";
+		};
 		0A398265242CEA8000CF0729 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +147,8 @@
 				0A39828A242CEA8200CF0729 /* PragatiProjectTests */,
 				0A398295242CEA8300CF0729 /* PragatiProjectUITests */,
 				0A39826F242CEA8000CF0729 /* Products */,
+				33360BB1AE97A999E1D703B4 /* Pods */,
+				E9DA6914B9BF1B0D716EB669 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,6 +170,7 @@
 				0A398275242CEA8000CF0729 /* ViewController.swift */,
 				0A398277242CEA8000CF0729 /* Main.storyboard */,
 				0A3982A6242D056B00CF0729 /* TabBar Items */,
+				0A385066246EA42800B0D8EB /* Employees */,
 				0A3982AB242D062C00CF0729 /* Account */,
 				0A4387682435DB64009012EE /* CountryAndLanguageList */,
 				0A39827D242CEA8200CF0729 /* Assets.xcassets */,
@@ -167,6 +202,8 @@
 		0A3982A6242D056B00CF0729 /* TabBar Items */ = {
 			isa = PBXGroup;
 			children = (
+				0A3F9E0C246D7DA8009B1669 /* HomeViewController.swift */,
+				0A385060246EA13600B0D8EB /* EmployeesViewController.swift */,
 				0A3982A4242D056300CF0729 /* AccountViewController.swift */,
 			);
 			path = "TabBar Items";
@@ -200,6 +237,30 @@
 			path = CountryAndLanguageList;
 			sourceTree = "<group>";
 		};
+		33360BB1AE97A999E1D703B4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FF3F644C7848AAA015F78AF9 /* Pods-PragatiProject.debug.xcconfig */,
+				A86E1AF5D765DF5C7543B882 /* Pods-PragatiProject.release.xcconfig */,
+				64A4CCDB3B5984F4BE0996CB /* Pods-PragatiProject-PragatiProjectUITests.debug.xcconfig */,
+				529781C8F42C4E55D85C5AAE /* Pods-PragatiProject-PragatiProjectUITests.release.xcconfig */,
+				C6E4FDDA7CC17370C77366BB /* Pods-PragatiProjectTests.debug.xcconfig */,
+				6166AB99B6EB3016E8335655 /* Pods-PragatiProjectTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E9DA6914B9BF1B0D716EB669 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				27F5C7C6C7F2890F7C7D751B /* Pods_PragatiProject.framework */,
+				D79F61D634A7884863148023 /* Pods_PragatiProject_PragatiProjectUITests.framework */,
+				C7B7B78544BB56D7466582F0 /* Pods_PragatiProjectTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -207,9 +268,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A39829B242CEA8300CF0729 /* Build configuration list for PBXNativeTarget "PragatiProject" */;
 			buildPhases = (
+				463C3FD15B38DA5447425E7B /* [CP] Check Pods Manifest.lock */,
 				0A39826A242CEA8000CF0729 /* Sources */,
 				0A39826B242CEA8000CF0729 /* Frameworks */,
 				0A39826C242CEA8000CF0729 /* Resources */,
+				B593544F41C203B716BF8A53 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -224,6 +287,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A39829E242CEA8300CF0729 /* Build configuration list for PBXNativeTarget "PragatiProjectTests" */;
 			buildPhases = (
+				D786BEC2F37ECD9AF766DB72 /* [CP] Check Pods Manifest.lock */,
 				0A398283242CEA8200CF0729 /* Sources */,
 				0A398284242CEA8200CF0729 /* Frameworks */,
 				0A398285242CEA8200CF0729 /* Resources */,
@@ -242,9 +306,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A3982A1242CEA8300CF0729 /* Build configuration list for PBXNativeTarget "PragatiProjectUITests" */;
 			buildPhases = (
+				D57D45593EB8BF61AAB8B9A3 /* [CP] Check Pods Manifest.lock */,
 				0A39828E242CEA8300CF0729 /* Sources */,
 				0A39828F242CEA8300CF0729 /* Frameworks */,
 				0A398290242CEA8300CF0729 /* Resources */,
+				114F05E7C7B50A4FE047118C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -304,6 +370,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A385065246EA40300B0D8EB /* EmployeeTableViewCell.xib in Resources */,
 				0AC7E3772433640E00BBCF87 /* CountryTableViewCell.xib in Resources */,
 				0A3C08BD2434BD9D007B00F9 /* LanguageListTableViewCell.xib in Resources */,
 				0AC7E37D243379DE00BBCF87 /* AccountTableViewCell.xib in Resources */,
@@ -331,20 +398,126 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		114F05E7C7B50A4FE047118C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PragatiProject-PragatiProjectUITests/Pods-PragatiProject-PragatiProjectUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PragatiProject-PragatiProjectUITests/Pods-PragatiProject-PragatiProjectUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PragatiProject-PragatiProjectUITests/Pods-PragatiProject-PragatiProjectUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		463C3FD15B38DA5447425E7B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PragatiProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B593544F41C203B716BF8A53 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PragatiProject/Pods-PragatiProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PragatiProject/Pods-PragatiProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PragatiProject/Pods-PragatiProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D57D45593EB8BF61AAB8B9A3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PragatiProject-PragatiProjectUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D786BEC2F37ECD9AF766DB72 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PragatiProjectTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0A39826A242CEA8000CF0729 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0A3982AA242D061700CF0729 /* SignInViewController.swift in Sources */,
+				0A385064246EA40300B0D8EB /* EmployeeTableViewCell.swift in Sources */,
 				0A3982A8242D05EE00CF0729 /* JoinViewController.swift in Sources */,
 				0A398276242CEA8000CF0729 /* ViewController.swift in Sources */,
 				0A3C08B52434A228007B00F9 /* CountryAndLanguageViewController.swift in Sources */,
 				0AC7E37C2433740800BBCF87 /* AccountTableViewCell.swift in Sources */,
+				0A3F9E0D246D7DA8009B1669 /* HomeViewController.swift in Sources */,
 				0AC7E37A2433644000BBCF87 /* LanguageTableViewCell.swift in Sources */,
 				0A3982A5242D056300CF0729 /* AccountViewController.swift in Sources */,
 				0A19FC16246D18F400341A27 /* LocationViewController.swift in Sources */,
 				0AC7E3762433640E00BBCF87 /* CountryTableViewCell.swift in Sources */,
+				0A385061246EA13600B0D8EB /* EmployeesViewController.swift in Sources */,
 				0A3C08B82434A754007B00F9 /* CountryListTableViewCell.swift in Sources */,
 				0A398272242CEA8000CF0729 /* AppDelegate.swift in Sources */,
 				0A39827C242CEA8000CF0729 /* PragatiProject.xcdatamodeld in Sources */,
@@ -520,6 +693,7 @@
 		};
 		0A39829C242CEA8300CF0729 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF3F644C7848AAA015F78AF9 /* Pods-PragatiProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -537,6 +711,7 @@
 		};
 		0A39829D242CEA8300CF0729 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A86E1AF5D765DF5C7543B882 /* Pods-PragatiProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -554,6 +729,7 @@
 		};
 		0A39829F242CEA8300CF0729 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6E4FDDA7CC17370C77366BB /* Pods-PragatiProjectTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -575,6 +751,7 @@
 		};
 		0A3982A0242CEA8300CF0729 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6166AB99B6EB3016E8335655 /* Pods-PragatiProjectTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -596,6 +773,7 @@
 		};
 		0A3982A2242CEA8300CF0729 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64A4CCDB3B5984F4BE0996CB /* Pods-PragatiProject-PragatiProjectUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -615,6 +793,7 @@
 		};
 		0A3982A3242CEA8300CF0729 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 529781C8F42C4E55D85C5AAE /* Pods-PragatiProject-PragatiProjectUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

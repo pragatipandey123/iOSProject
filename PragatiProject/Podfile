@@ -1,0 +1,18 @@
+# platform :ios, '9.0'
+
+target 'PragatiProject' do
+  use_frameworks!
+  pod 'Alamofire'
+
+  # Pods for PragatiProject
+
+  target 'PragatiProjectTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'PragatiProjectUITests' do
+    # Pods for testing
+  end
+
+end

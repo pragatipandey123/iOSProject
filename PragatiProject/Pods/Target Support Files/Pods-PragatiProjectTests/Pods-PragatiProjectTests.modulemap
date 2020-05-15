@@ -1,0 +1,6 @@
+framework module Pods_PragatiProjectTests {
+  umbrella header "Pods-PragatiProjectTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

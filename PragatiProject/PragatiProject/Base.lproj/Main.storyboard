@@ -24,10 +24,10 @@
             </objects>
             <point key="canvasLocation" x="-2880" y="-415"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="cTh-PW-dVq">
             <objects>
-                <viewController id="Exl-Zj-XxH" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="Exl-Zj-XxH" customClass="HomeViewController" customModule="PragatiProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PLV-Uw-bFj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,11 +62,11 @@
             </objects>
             <point key="canvasLocation" x="328" y="-1972"/>
         </scene>
-        <!--Categories-->
+        <!--Employees-->
         <scene sceneID="ccg-X6-cHc">
             <objects>
                 <navigationController id="IWr-Ao-75X" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Categories" image="list.bullet" catalog="system" id="slO-G3-1uZ"/>
+                    <tabBarItem key="tabBarItem" title="Employees" image="person.crop.rectangle.fill" catalog="system" id="slO-G3-1uZ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="McS-ps-2R1">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -79,27 +79,42 @@
             </objects>
             <point key="canvasLocation" x="-1283" y="-415"/>
         </scene>
-        <!--View Controller-->
+        <!--Employees View Controller-->
         <scene sceneID="Br0-dK-Xrb">
             <objects>
-                <viewController id="nHt-gV-vTn" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EmployeesViewController" id="nHt-gV-vTn" customClass="EmployeesViewController" customModule="PragatiProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Ni-X3-mJU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ftO-Qx-AgI">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ftO-Qx-AgI" firstAttribute="leading" secondItem="QwK-WD-Eh6" secondAttribute="leading" id="05C-f2-pxn"/>
+                            <constraint firstItem="QwK-WD-Eh6" firstAttribute="bottom" secondItem="ftO-Qx-AgI" secondAttribute="bottom" id="AyK-M8-63H"/>
+                            <constraint firstItem="QwK-WD-Eh6" firstAttribute="trailing" secondItem="ftO-Qx-AgI" secondAttribute="trailing" id="Fb7-6u-1r0"/>
+                            <constraint firstItem="ftO-Qx-AgI" firstAttribute="top" secondItem="QwK-WD-Eh6" secondAttribute="top" id="rlf-F3-rv0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="QwK-WD-Eh6"/>
                     </view>
                     <navigationItem key="navigationItem" id="qxl-p5-pkM"/>
+                    <connections>
+                        <outlet property="employeesTableView" destination="ftO-Qx-AgI" id="dez-r3-eu3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Abb-mX-PyT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1284" y="597"/>
+            <point key="canvasLocation" x="-1284" y="566"/>
         </scene>
-        <!--My Cart-->
+        <!--Favourites-->
         <scene sceneID="JBw-Z2-aNN">
             <objects>
                 <navigationController id="VSp-Ph-Ear" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Cart" image="cart" catalog="system" badgeValue="1" id="rHx-kL-ffE">
+                    <tabBarItem key="tabBarItem" title="Favourites" image="star.fill" catalog="system" id="rHx-kL-ffE">
                         <color key="badgeColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="b3T-Tf-T14">
@@ -219,11 +234,11 @@
             </objects>
             <point key="canvasLocation" x="1983" y="597"/>
         </scene>
-        <!--Whislist-->
+        <!--Chat-->
         <scene sceneID="6QW-bi-8hN">
             <objects>
                 <navigationController id="HUH-r8-aFq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Whislist" image="heart" catalog="system" id="Lor-8u-Pko"/>
+                    <tabBarItem key="tabBarItem" title="Chat" image="phone.fill.arrow.up.right" catalog="system" id="Lor-8u-Pko"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dvs-go-GkV">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -384,11 +399,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cart" catalog="system" width="64" height="50"/>
-        <image name="heart" catalog="system" width="64" height="54"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
-        <image name="list.bullet" catalog="system" width="64" height="44"/>
         <image name="person.circle" catalog="system" width="64" height="60"/>
+        <image name="person.crop.rectangle.fill" catalog="system" width="64" height="46"/>
         <image name="person.fill" catalog="system" width="64" height="60"/>
+        <image name="phone.fill.arrow.up.right" catalog="system" width="64" height="56"/>
+        <image name="star.fill" catalog="system" width="64" height="58"/>
     </resources>
 </document>
