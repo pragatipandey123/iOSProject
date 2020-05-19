@@ -3,17 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0A19FC16246D18F400341A27 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A19FC15246D18F400341A27 /* LocationViewController.swift */; };
 		0A385061246EA13600B0D8EB /* EmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A385060246EA13600B0D8EB /* EmployeesViewController.swift */; };
-		0A385064246EA40300B0D8EB /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A385062246EA40300B0D8EB /* EmployeeTableViewCell.swift */; };
-		0A385065246EA40300B0D8EB /* EmployeeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A385063246EA40300B0D8EB /* EmployeeTableViewCell.xib */; };
 		0A398272242CEA8000CF0729 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A398271242CEA8000CF0729 /* AppDelegate.swift */; };
 		0A398274242CEA8000CF0729 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A398273242CEA8000CF0729 /* SceneDelegate.swift */; };
-		0A398276242CEA8000CF0729 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A398275242CEA8000CF0729 /* ViewController.swift */; };
 		0A398279242CEA8000CF0729 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A398277242CEA8000CF0729 /* Main.storyboard */; };
 		0A39827C242CEA8000CF0729 /* PragatiProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A39827A242CEA8000CF0729 /* PragatiProject.xcdatamodeld */; };
 		0A39827E242CEA8200CF0729 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A39827D242CEA8200CF0729 /* Assets.xcassets */; };
@@ -29,6 +26,12 @@
 		0A3C08BC2434BD9D007B00F9 /* LanguageListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C08BA2434BD9D007B00F9 /* LanguageListTableViewCell.swift */; };
 		0A3C08BD2434BD9D007B00F9 /* LanguageListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C08BB2434BD9D007B00F9 /* LanguageListTableViewCell.xib */; };
 		0A3F9E0D246D7DA8009B1669 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3F9E0C246D7DA8009B1669 /* HomeViewController.swift */; };
+		0A41FF0E24740D28006A7016 /* ListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A41FF0D24740D28006A7016 /* ListingViewController.swift */; };
+		0A41FF1624740FDB006A7016 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A41FF1524740FDB006A7016 /* CardViewController.swift */; };
+		0A41FF192474116F006A7016 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A41FF172474116F006A7016 /* CardTableViewCell.swift */; };
+		0A41FF1A2474116F006A7016 /* CardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A41FF182474116F006A7016 /* CardTableViewCell.xib */; };
+		0A41FF1D247417AA006A7016 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A41FF1B247417AA006A7016 /* ListTableViewCell.swift */; };
+		0A41FF1E247417AA006A7016 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A41FF1C247417AA006A7016 /* ListTableViewCell.xib */; };
 		0AC7E3762433640E00BBCF87 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC7E3742433640E00BBCF87 /* CountryTableViewCell.swift */; };
 		0AC7E3772433640E00BBCF87 /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AC7E3752433640E00BBCF87 /* CountryTableViewCell.xib */; };
 		0AC7E37A2433644000BBCF87 /* LanguageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC7E3782433644000BBCF87 /* LanguageTableViewCell.swift */; };
@@ -60,12 +63,9 @@
 /* Begin PBXFileReference section */
 		0A19FC15246D18F400341A27 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		0A385060246EA13600B0D8EB /* EmployeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesViewController.swift; sourceTree = "<group>"; };
-		0A385062246EA40300B0D8EB /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
-		0A385063246EA40300B0D8EB /* EmployeeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeTableViewCell.xib; sourceTree = "<group>"; };
 		0A39826E242CEA8000CF0729 /* PragatiProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PragatiProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A398271242CEA8000CF0729 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A398273242CEA8000CF0729 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0A398275242CEA8000CF0729 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0A398278242CEA8000CF0729 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A39827B242CEA8000CF0729 /* PragatiProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PragatiProject.xcdatamodel; sourceTree = "<group>"; };
 		0A39827D242CEA8200CF0729 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,6 +86,12 @@
 		0A3C08BA2434BD9D007B00F9 /* LanguageListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageListTableViewCell.swift; sourceTree = "<group>"; };
 		0A3C08BB2434BD9D007B00F9 /* LanguageListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LanguageListTableViewCell.xib; sourceTree = "<group>"; };
 		0A3F9E0C246D7DA8009B1669 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0A41FF0D24740D28006A7016 /* ListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingViewController.swift; sourceTree = "<group>"; };
+		0A41FF1524740FDB006A7016 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		0A41FF172474116F006A7016 /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
+		0A41FF182474116F006A7016 /* CardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardTableViewCell.xib; sourceTree = "<group>"; };
+		0A41FF1B247417AA006A7016 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		0A41FF1C247417AA006A7016 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		0AC7E36F2433589E00BBCF87 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		0AC7E3702433589E00BBCF87 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
 		0AC7E3742433640E00BBCF87 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
@@ -134,8 +140,12 @@
 		0A385066246EA42800B0D8EB /* Employees */ = {
 			isa = PBXGroup;
 			children = (
-				0A385062246EA40300B0D8EB /* EmployeeTableViewCell.swift */,
-				0A385063246EA40300B0D8EB /* EmployeeTableViewCell.xib */,
+				0A41FF0D24740D28006A7016 /* ListingViewController.swift */,
+				0A41FF1B247417AA006A7016 /* ListTableViewCell.swift */,
+				0A41FF1C247417AA006A7016 /* ListTableViewCell.xib */,
+				0A41FF1524740FDB006A7016 /* CardViewController.swift */,
+				0A41FF172474116F006A7016 /* CardTableViewCell.swift */,
+				0A41FF182474116F006A7016 /* CardTableViewCell.xib */,
 			);
 			path = Employees;
 			sourceTree = "<group>";
@@ -167,7 +177,6 @@
 			children = (
 				0A398271242CEA8000CF0729 /* AppDelegate.swift */,
 				0A398273242CEA8000CF0729 /* SceneDelegate.swift */,
-				0A398275242CEA8000CF0729 /* ViewController.swift */,
 				0A398277242CEA8000CF0729 /* Main.storyboard */,
 				0A3982A6242D056B00CF0729 /* TabBar Items */,
 				0A385066246EA42800B0D8EB /* Employees */,
@@ -247,7 +256,6 @@
 				C6E4FDDA7CC17370C77366BB /* Pods-PragatiProjectTests.debug.xcconfig */,
 				6166AB99B6EB3016E8335655 /* Pods-PragatiProjectTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -273,6 +281,7 @@
 				0A39826B242CEA8000CF0729 /* Frameworks */,
 				0A39826C242CEA8000CF0729 /* Resources */,
 				B593544F41C203B716BF8A53 /* [CP] Embed Pods Frameworks */,
+				F58AEC979CBB599B53A4346A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -311,6 +320,7 @@
 				0A39828F242CEA8300CF0729 /* Frameworks */,
 				0A398290242CEA8300CF0729 /* Resources */,
 				114F05E7C7B50A4FE047118C /* [CP] Embed Pods Frameworks */,
+				395286F065C4C3F92D07B69D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -370,15 +380,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A385065246EA40300B0D8EB /* EmployeeTableViewCell.xib in Resources */,
 				0AC7E3772433640E00BBCF87 /* CountryTableViewCell.xib in Resources */,
 				0A3C08BD2434BD9D007B00F9 /* LanguageListTableViewCell.xib in Resources */,
 				0AC7E37D243379DE00BBCF87 /* AccountTableViewCell.xib in Resources */,
 				0A398281242CEA8200CF0729 /* LaunchScreen.storyboard in Resources */,
 				0A3C08B92434A754007B00F9 /* CountryListTableViewCell.xib in Resources */,
 				0A39827E242CEA8200CF0729 /* Assets.xcassets in Resources */,
+				0A41FF1A2474116F006A7016 /* CardTableViewCell.xib in Resources */,
 				0AC7E37B2433644000BBCF87 /* LanguageTableViewCell.xib in Resources */,
 				0A398279242CEA8000CF0729 /* Main.storyboard in Resources */,
+				0A41FF1E247417AA006A7016 /* ListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +425,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PragatiProject-PragatiProjectUITests/Pods-PragatiProject-PragatiProjectUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		395286F065C4C3F92D07B69D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PragatiProject-PragatiProjectUITests/Pods-PragatiProject-PragatiProjectUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PragatiProject-PragatiProjectUITests/Pods-PragatiProject-PragatiProjectUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PragatiProject-PragatiProjectUITests/Pods-PragatiProject-PragatiProjectUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		463C3FD15B38DA5447425E7B /* [CP] Check Pods Manifest.lock */ = {
@@ -499,6 +527,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F58AEC979CBB599B53A4346A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PragatiProject/Pods-PragatiProject-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PragatiProject/Pods-PragatiProject-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PragatiProject/Pods-PragatiProject-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -507,19 +552,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A3982AA242D061700CF0729 /* SignInViewController.swift in Sources */,
-				0A385064246EA40300B0D8EB /* EmployeeTableViewCell.swift in Sources */,
 				0A3982A8242D05EE00CF0729 /* JoinViewController.swift in Sources */,
-				0A398276242CEA8000CF0729 /* ViewController.swift in Sources */,
 				0A3C08B52434A228007B00F9 /* CountryAndLanguageViewController.swift in Sources */,
 				0AC7E37C2433740800BBCF87 /* AccountTableViewCell.swift in Sources */,
+				0A41FF192474116F006A7016 /* CardTableViewCell.swift in Sources */,
 				0A3F9E0D246D7DA8009B1669 /* HomeViewController.swift in Sources */,
 				0AC7E37A2433644000BBCF87 /* LanguageTableViewCell.swift in Sources */,
 				0A3982A5242D056300CF0729 /* AccountViewController.swift in Sources */,
+				0A41FF1D247417AA006A7016 /* ListTableViewCell.swift in Sources */,
 				0A19FC16246D18F400341A27 /* LocationViewController.swift in Sources */,
 				0AC7E3762433640E00BBCF87 /* CountryTableViewCell.swift in Sources */,
 				0A385061246EA13600B0D8EB /* EmployeesViewController.swift in Sources */,
 				0A3C08B82434A754007B00F9 /* CountryListTableViewCell.swift in Sources */,
+				0A41FF0E24740D28006A7016 /* ListingViewController.swift in Sources */,
 				0A398272242CEA8000CF0729 /* AppDelegate.swift in Sources */,
+				0A41FF1624740FDB006A7016 /* CardViewController.swift in Sources */,
 				0A39827C242CEA8000CF0729 /* PragatiProject.xcdatamodeld in Sources */,
 				0A398274242CEA8000CF0729 /* SceneDelegate.swift in Sources */,
 				0A3C08BC2434BD9D007B00F9 /* LanguageListTableViewCell.swift in Sources */,

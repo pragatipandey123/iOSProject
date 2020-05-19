@@ -3,6 +3,7 @@
 target 'PragatiProject' do
   use_frameworks!
   pod 'Alamofire'
+  pod 'GoogleMaps'
 
   # Pods for PragatiProject
 
