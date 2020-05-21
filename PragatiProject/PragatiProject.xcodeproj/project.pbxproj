@@ -32,6 +32,8 @@
 		0A41FF1A2474116F006A7016 /* CardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A41FF182474116F006A7016 /* CardTableViewCell.xib */; };
 		0A41FF1D247417AA006A7016 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A41FF1B247417AA006A7016 /* ListTableViewCell.swift */; };
 		0A41FF1E247417AA006A7016 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A41FF1C247417AA006A7016 /* ListTableViewCell.xib */; };
+		0A472DF22475654B00746209 /* ImageSliderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A472DF02475654B00746209 /* ImageSliderCollectionViewCell.swift */; };
+		0A472DF32475654B00746209 /* ImageSliderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A472DF12475654B00746209 /* ImageSliderCollectionViewCell.xib */; };
 		0AC7E3762433640E00BBCF87 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC7E3742433640E00BBCF87 /* CountryTableViewCell.swift */; };
 		0AC7E3772433640E00BBCF87 /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AC7E3752433640E00BBCF87 /* CountryTableViewCell.xib */; };
 		0AC7E37A2433644000BBCF87 /* LanguageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC7E3782433644000BBCF87 /* LanguageTableViewCell.swift */; };
@@ -92,6 +94,8 @@
 		0A41FF182474116F006A7016 /* CardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardTableViewCell.xib; sourceTree = "<group>"; };
 		0A41FF1B247417AA006A7016 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		0A41FF1C247417AA006A7016 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
+		0A472DF02475654B00746209 /* ImageSliderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSliderCollectionViewCell.swift; sourceTree = "<group>"; };
+		0A472DF12475654B00746209 /* ImageSliderCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageSliderCollectionViewCell.xib; sourceTree = "<group>"; };
 		0AC7E36F2433589E00BBCF87 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		0AC7E3702433589E00BBCF87 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
 		0AC7E3742433640E00BBCF87 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
@@ -179,9 +183,9 @@
 				0A398273242CEA8000CF0729 /* SceneDelegate.swift */,
 				0A398277242CEA8000CF0729 /* Main.storyboard */,
 				0A3982A6242D056B00CF0729 /* TabBar Items */,
+				0A472DF424756C7200746209 /* Home */,
 				0A385066246EA42800B0D8EB /* Employees */,
 				0A3982AB242D062C00CF0729 /* Account */,
-				0A4387682435DB64009012EE /* CountryAndLanguageList */,
 				0A39827D242CEA8200CF0729 /* Assets.xcassets */,
 				0A39827F242CEA8200CF0729 /* LaunchScreen.storyboard */,
 				0A398282242CEA8200CF0729 /* Info.plist */,
@@ -226,6 +230,7 @@
 				0A19FC15246D18F400341A27 /* LocationViewController.swift */,
 				0A3982A7242D05EE00CF0729 /* JoinViewController.swift */,
 				0A3982A9242D061700CF0729 /* SignInViewController.swift */,
+				0A4387682435DB64009012EE /* CountryAndLanguageList */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -244,6 +249,15 @@
 				0A3C08B72434A754007B00F9 /* CountryListTableViewCell.xib */,
 			);
 			path = CountryAndLanguageList;
+			sourceTree = "<group>";
+		};
+		0A472DF424756C7200746209 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0A472DF02475654B00746209 /* ImageSliderCollectionViewCell.swift */,
+				0A472DF12475654B00746209 /* ImageSliderCollectionViewCell.xib */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		33360BB1AE97A999E1D703B4 /* Pods */ = {
@@ -382,6 +396,7 @@
 			files = (
 				0AC7E3772433640E00BBCF87 /* CountryTableViewCell.xib in Resources */,
 				0A3C08BD2434BD9D007B00F9 /* LanguageListTableViewCell.xib in Resources */,
+				0A472DF32475654B00746209 /* ImageSliderCollectionViewCell.xib in Resources */,
 				0AC7E37D243379DE00BBCF87 /* AccountTableViewCell.xib in Resources */,
 				0A398281242CEA8200CF0729 /* LaunchScreen.storyboard in Resources */,
 				0A3C08B92434A754007B00F9 /* CountryListTableViewCell.xib in Resources */,
@@ -570,6 +585,7 @@
 				0A39827C242CEA8000CF0729 /* PragatiProject.xcdatamodeld in Sources */,
 				0A398274242CEA8000CF0729 /* SceneDelegate.swift in Sources */,
 				0A3C08BC2434BD9D007B00F9 /* LanguageListTableViewCell.swift in Sources */,
+				0A472DF22475654B00746209 /* ImageSliderCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
