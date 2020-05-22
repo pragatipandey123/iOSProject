@@ -18,11 +18,9 @@
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yXu-ZR-jVY">
                         <rect key="frame" x="10" y="10" width="395" height="230"/>
-                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </imageView>
                 </subviews>
             </view>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="yXu-ZR-jVY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="RWJ-6M-NiA"/>
                 <constraint firstAttribute="bottom" secondItem="yXu-ZR-jVY" secondAttribute="bottom" constant="10" id="egi-U8-CaR"/>

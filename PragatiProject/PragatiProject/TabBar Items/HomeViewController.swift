@@ -8,33 +8,30 @@
 
 import UIKit
 
-struct Movie{
-    var page: Int
-    var total_results: Int
-    var total_pages: Int
-    var results: [MovieInfo]
+struct Movie {
+let page : Int?
+let results : [MovieData]?
+let totalPages : Int?
+let totaResults : Int?
 }
-struct MovieInfo{
-    var original_name: String?
-    var id: Int?
-    var name: String?
-    var vote_count: Int?
-    var vote_average: Float?
-    var first_air_date: String?
-    var poster_path: String
-    var genres: [Genre]?
-    var original_language: String?
-    var backdrop_path: String?
-    let overview: String?
-    var adult: Bool?
-    var original_country: String?
-    var popularity: String?
-    var media_type: String
+struct MovieData {
+let id : Int?
+let video : Bool?
+let voteCount : Int?
+let voteAverage : Double?
+let title : String?
+let releaseDate : String?
+let originalLanguage : String?
+let originalTitle : String?
+let genreIds : [Int]?
+let backdropPath : String?
+let adult : Bool?
+let overview : String?
+let posterPath : String?
+let popularity : Double?
+let mediaType : String?
 }
 
-struct Genre:Decodable {
-    let id: Int?
-}
 
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
   
@@ -43,7 +40,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var pageSliding: UIPageControl!
     
     var model = [Movie]()
-    var array = [String]()
+    var array = [Any]()
+   
    
     var timer = Timer()
        var counter = 0
@@ -61,13 +59,15 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         pageSliding.currentPage = 0
               
         DispatchQueue.main.async {
-        self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
               }
-        getData()
+       
               
     }
+    
     override func viewWillAppear(_ animated: Bool) {
-        imageCollectionView.reloadData()
+       imageCollectionView.reloadData()
+
     }
     
     @objc func changeImage() {
@@ -92,7 +92,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
+        print(array.count)
         return array.count
       }
       
@@ -105,11 +105,13 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
               guard let response = data else {return}
 
                let finalImage = UIImage(data: response)
-                  cell.imageSliding.image = finalImage
+        DispatchQueue.main.async {
+            cell.imageSliding.image = finalImage
             
+        }
               }
-          dataFetch.resume()
-      
+        dataFetch.resume()
+        
           return cell
     
       }
@@ -119,41 +121,49 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
               return CGSize(width: view.frame.width, height: 250)
           }
       
-    func getData(){
-        let url = URL(string: "https://api.themoviedb.org/3/trending/all/day?api_key=820016b7116f872f5f27bf56f9fdfb66")
-        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+    func getData() {
+        let url = URL(string: "https://api.themoviedb.org/3/trending/all/day?api_key=820016b7116f872f5f27bf56f9fdfb66")!
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
                 guard let dataResponse = data else {  return }
-            
+
          do{
-             
-            let jsonResponse = try JSONSerialization.jsonObject(with:
+
+        let jsonResponse = try JSONSerialization.jsonObject(with:
                                               dataResponse, options: [])
-                      
+
             guard let jsonArray = jsonResponse as? [String : Any] else { return }
-                        
+
 
             guard let jsonResults = jsonArray["results"] as? [[String: Any]] else { return }
-                
-                for i in 0...jsonResults.count - 1 {
-                 
-                    self.array.append(jsonResults[i]["backdrop_path"] as? String ?? " ")
+             
+
+            for i in 0...jsonResults.count - 1 {
+
+            self.array.append(jsonResults[i]["results"] as? String ?? " ")
+
                    }
               print(self.array)
-            
+
+
          }
                     catch  {
                         print("Error")
                     }
-                   
+
             }
-                task.resume()
-        
+
+                .resume()
+
+
         }
+    
         
 }
         
     
 
     
+
 
 
