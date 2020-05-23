@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0A19FC16246D18F400341A27 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A19FC15246D18F400341A27 /* LocationViewController.swift */; };
+		0A3632782479122C00E1FB75 /* SliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3632762479122C00E1FB75 /* SliderTableViewCell.swift */; };
+		0A3632792479122C00E1FB75 /* SliderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A3632772479122C00E1FB75 /* SliderTableViewCell.xib */; };
 		0A385061246EA13600B0D8EB /* EmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A385060246EA13600B0D8EB /* EmployeesViewController.swift */; };
 		0A398272242CEA8000CF0729 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A398271242CEA8000CF0729 /* AppDelegate.swift */; };
 		0A398274242CEA8000CF0729 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A398273242CEA8000CF0729 /* SceneDelegate.swift */; };
@@ -20,6 +22,10 @@
 		0A3982A5242D056300CF0729 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3982A4242D056300CF0729 /* AccountViewController.swift */; };
 		0A3982A8242D05EE00CF0729 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3982A7242D05EE00CF0729 /* JoinViewController.swift */; };
 		0A3982AA242D061700CF0729 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3982A9242D061700CF0729 /* SignInViewController.swift */; };
+		0A3AB57C247860EA00164F26 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3AB57A247860EA00164F26 /* MovieCollectionViewCell.swift */; };
+		0A3AB57D247860EA00164F26 /* MovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A3AB57B247860EA00164F26 /* MovieCollectionViewCell.xib */; };
+		0A3AB585247868C900164F26 /* MovieSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3AB583247868C900164F26 /* MovieSectionTableViewCell.swift */; };
+		0A3AB586247868C900164F26 /* MovieSectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A3AB584247868C900164F26 /* MovieSectionTableViewCell.xib */; };
 		0A3C08B52434A228007B00F9 /* CountryAndLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C08B42434A228007B00F9 /* CountryAndLanguageViewController.swift */; };
 		0A3C08B82434A754007B00F9 /* CountryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C08B62434A754007B00F9 /* CountryListTableViewCell.swift */; };
 		0A3C08B92434A754007B00F9 /* CountryListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C08B72434A754007B00F9 /* CountryListTableViewCell.xib */; };
@@ -64,6 +70,8 @@
 
 /* Begin PBXFileReference section */
 		0A19FC15246D18F400341A27 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		0A3632762479122C00E1FB75 /* SliderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		0A3632772479122C00E1FB75 /* SliderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		0A385060246EA13600B0D8EB /* EmployeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesViewController.swift; sourceTree = "<group>"; };
 		0A39826E242CEA8000CF0729 /* PragatiProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PragatiProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A398271242CEA8000CF0729 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +90,10 @@
 		0A3982A4242D056300CF0729 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		0A3982A7242D05EE00CF0729 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		0A3982A9242D061700CF0729 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		0A3AB57A247860EA00164F26 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		0A3AB57B247860EA00164F26 /* MovieCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCollectionViewCell.xib; sourceTree = "<group>"; };
+		0A3AB583247868C900164F26 /* MovieSectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSectionTableViewCell.swift; sourceTree = "<group>"; };
+		0A3AB584247868C900164F26 /* MovieSectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieSectionTableViewCell.xib; sourceTree = "<group>"; };
 		0A3C08B42434A228007B00F9 /* CountryAndLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryAndLanguageViewController.swift; sourceTree = "<group>"; };
 		0A3C08B62434A754007B00F9 /* CountryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListTableViewCell.swift; sourceTree = "<group>"; };
 		0A3C08B72434A754007B00F9 /* CountryListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryListTableViewCell.xib; sourceTree = "<group>"; };
@@ -254,8 +266,14 @@
 		0A472DF424756C7200746209 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0A3632762479122C00E1FB75 /* SliderTableViewCell.swift */,
+				0A3632772479122C00E1FB75 /* SliderTableViewCell.xib */,
 				0A472DF02475654B00746209 /* ImageSliderCollectionViewCell.swift */,
 				0A472DF12475654B00746209 /* ImageSliderCollectionViewCell.xib */,
+				0A3AB57A247860EA00164F26 /* MovieCollectionViewCell.swift */,
+				0A3AB57B247860EA00164F26 /* MovieCollectionViewCell.xib */,
+				0A3AB583247868C900164F26 /* MovieSectionTableViewCell.swift */,
+				0A3AB584247868C900164F26 /* MovieSectionTableViewCell.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -398,6 +416,9 @@
 				0A3C08BD2434BD9D007B00F9 /* LanguageListTableViewCell.xib in Resources */,
 				0A472DF32475654B00746209 /* ImageSliderCollectionViewCell.xib in Resources */,
 				0AC7E37D243379DE00BBCF87 /* AccountTableViewCell.xib in Resources */,
+				0A3AB57D247860EA00164F26 /* MovieCollectionViewCell.xib in Resources */,
+				0A3AB586247868C900164F26 /* MovieSectionTableViewCell.xib in Resources */,
+				0A3632792479122C00E1FB75 /* SliderTableViewCell.xib in Resources */,
 				0A398281242CEA8200CF0729 /* LaunchScreen.storyboard in Resources */,
 				0A3C08B92434A754007B00F9 /* CountryListTableViewCell.xib in Resources */,
 				0A39827E242CEA8200CF0729 /* Assets.xcassets in Resources */,
@@ -572,9 +593,12 @@
 				0AC7E37C2433740800BBCF87 /* AccountTableViewCell.swift in Sources */,
 				0A41FF192474116F006A7016 /* CardTableViewCell.swift in Sources */,
 				0A3F9E0D246D7DA8009B1669 /* HomeViewController.swift in Sources */,
+				0A3AB585247868C900164F26 /* MovieSectionTableViewCell.swift in Sources */,
 				0AC7E37A2433644000BBCF87 /* LanguageTableViewCell.swift in Sources */,
+				0A3632782479122C00E1FB75 /* SliderTableViewCell.swift in Sources */,
 				0A3982A5242D056300CF0729 /* AccountViewController.swift in Sources */,
 				0A41FF1D247417AA006A7016 /* ListTableViewCell.swift in Sources */,
+				0A3AB57C247860EA00164F26 /* MovieCollectionViewCell.swift in Sources */,
 				0A19FC16246D18F400341A27 /* LocationViewController.swift in Sources */,
 				0AC7E3762433640E00BBCF87 /* CountryTableViewCell.swift in Sources */,
 				0A385061246EA13600B0D8EB /* EmployeesViewController.swift in Sources */,

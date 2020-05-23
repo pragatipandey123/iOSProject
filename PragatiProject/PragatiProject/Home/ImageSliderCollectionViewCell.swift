@@ -15,8 +15,9 @@ class ImageSliderCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        imageSliding.layer.cornerRadius = 10
+        imageSliding.layer.cornerRadius = 5
         imageSliding.clipsToBounds = true
+        
         
     }
 
