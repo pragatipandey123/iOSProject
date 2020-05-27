@@ -9,28 +9,6 @@
 import UIKit
 import Alamofire
 
-struct Movie: Codable {
- var page : Int?
- var results : [MovieData]
- var totalPages : Int?
- var totaResults : Int?
- }
-struct MovieData: Codable {
- var id: Int?
- var video: Bool?
- var vote_count: Int?
- var vote_average: Float?
- var title: String?
- var release_date: String?
- var original_language: String?
- var original_title: String?
- var backdrop_path: String?
- var adult: Bool?
- var overview: String?
- var poster_path: String?
- var popularity: Float?
- var media_type: String?
-}
 
 
 class SliderTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
@@ -40,6 +18,11 @@ class SliderTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
     
     var model: Movie?
     var counter = 0
+    var view: UIViewController?
+    
+    static var trending : MovieData?
+    static var final: Movie?
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -61,7 +44,7 @@ class SliderTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
     
     //Set Timer to switch between the Images
     func setTimer() {
-        _ = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(SliderTableViewCell.changeImage), userInfo: nil,
+        _ = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(SliderTableViewCell.changeImage), userInfo: nil,
     repeats: true)
       }
 
@@ -125,6 +108,17 @@ class SliderTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
            dataFetch.resume()
              return cell
          }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        MovieSectionTableViewCell.type = 0
+        SliderTableViewCell.final = model
+        SliderTableViewCell.trending = model?.results[indexPath.row]
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "MovieDetailsViewController")
+        view?.navigationController!.pushViewController(vc, animated: true)
+    }
+    
        
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
                  

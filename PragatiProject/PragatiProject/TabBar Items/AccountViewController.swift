@@ -210,6 +210,12 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
                 self.navigationController?.pushViewController(vc, animated: true)
         
         }
+        
+        if indexPath.section == 1 && indexPath.row == 4 {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "ThemeViewController")
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
             
         }
     }

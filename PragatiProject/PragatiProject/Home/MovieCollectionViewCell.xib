@@ -25,14 +25,17 @@
                                     <constraint firstAttribute="height" constant="130" id="eXK-zM-AbT"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBu-gW-nv4">
-                                <rect key="frame" x="8" y="135" width="102" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBu-gW-nv4">
+                                <rect key="frame" x="8" y="135" width="120" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="MwK-t3-0OX"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adventure" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3X-Xf-UxD">
-                                <rect key="frame" x="8" y="161.5" width="79" height="21"/>
+                                <rect key="frame" x="8" y="158.5" width="79" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -44,18 +47,27 @@
                                     <constraint firstAttribute="width" constant="21" id="oOw-yu-FCE"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRo-ZM-qta">
+                                <rect key="frame" x="246" y="159" width="49" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="S3X-Xf-UxD" firstAttribute="top" secondItem="qBu-gW-nv4" secondAttribute="bottom" constant="2.5" id="0ui-Ni-Y9v"/>
                             <constraint firstAttribute="trailing" secondItem="LHY-A1-ZvO" secondAttribute="trailing" constant="8" id="17I-WH-SS5"/>
                             <constraint firstItem="VaG-qv-rfl" firstAttribute="top" secondItem="rls-NM-Hae" secondAttribute="top" id="3ZF-7D-arb"/>
                             <constraint firstItem="VaG-qv-rfl" firstAttribute="centerX" secondItem="rls-NM-Hae" secondAttribute="centerX" id="3j5-ao-nYa"/>
-                            <constraint firstItem="qBu-gW-nv4" firstAttribute="leading" secondItem="rls-NM-Hae" secondAttribute="leading" constant="8" id="81D-GQ-qfX"/>
                             <constraint firstItem="S3X-Xf-UxD" firstAttribute="leading" secondItem="rls-NM-Hae" secondAttribute="leading" constant="8" id="8r9-ec-i42"/>
-                            <constraint firstItem="LHY-A1-ZvO" firstAttribute="top" secondItem="qBu-gW-nv4" secondAttribute="top" id="Cs0-ms-N4W"/>
-                            <constraint firstItem="S3X-Xf-UxD" firstAttribute="top" secondItem="qBu-gW-nv4" secondAttribute="bottom" constant="6" id="See-tP-KPT"/>
                             <constraint firstItem="VaG-qv-rfl" firstAttribute="leading" secondItem="rls-NM-Hae" secondAttribute="leading" id="Xga-xC-e2D"/>
-                            <constraint firstItem="qBu-gW-nv4" firstAttribute="top" secondItem="VaG-qv-rfl" secondAttribute="bottom" constant="5" id="gOe-gf-YP4"/>
+                            <constraint firstItem="dRo-ZM-qta" firstAttribute="top" secondItem="LHY-A1-ZvO" secondAttribute="bottom" constant="3" id="e6c-CT-JmO"/>
+                            <constraint firstItem="qBu-gW-nv4" firstAttribute="top" secondItem="LHY-A1-ZvO" secondAttribute="top" id="gj6-cV-uqk"/>
+                            <constraint firstItem="qBu-gW-nv4" firstAttribute="top" secondItem="VaG-qv-rfl" secondAttribute="bottom" constant="5" id="gnZ-sG-A4i"/>
+                            <constraint firstAttribute="trailing" secondItem="dRo-ZM-qta" secondAttribute="trailing" constant="5" id="tS7-dq-hMA"/>
+                            <constraint firstItem="qBu-gW-nv4" firstAttribute="leading" secondItem="rls-NM-Hae" secondAttribute="leading" constant="8" id="uSg-1I-lSg"/>
+                            <constraint firstItem="qBu-gW-nv4" firstAttribute="bottom" secondItem="LHY-A1-ZvO" secondAttribute="bottom" id="vv0-2C-gy5"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -71,6 +83,7 @@
                 <outlet property="imageName" destination="qBu-gW-nv4" id="RRE-mm-E23"/>
                 <outlet property="imageView" destination="VaG-qv-rfl" id="K2F-a0-L6p"/>
                 <outlet property="movieType" destination="S3X-Xf-UxD" id="Yzw-Va-2TF"/>
+                <outlet property="rating" destination="dRo-ZM-qta" id="4Ez-0R-OBB"/>
                 <outlet property="wholeView" destination="rls-NM-Hae" id="dkP-EA-yse"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="106.47321428571428"/>
