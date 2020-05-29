@@ -34,6 +34,7 @@
                     <constraint firstItem="9oK-98-4TY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="mde-Fj-Kwh"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="movieCollectionView" destination="9oK-98-4TY" id="AAf-as-8c9"/>

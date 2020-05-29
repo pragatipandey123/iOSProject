@@ -4,6 +4,11 @@ target 'PragatiProject' do
   use_frameworks!
   pod 'Alamofire'
   pod 'GoogleMaps'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
+  pod 'FBSDKLoginKit'
+  pod 'iOSDropDown'
 
   # Pods for PragatiProject
 

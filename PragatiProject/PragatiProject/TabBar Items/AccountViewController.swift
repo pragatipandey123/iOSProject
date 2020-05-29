@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
+import FBSDKLoginKit
 
 class AccountViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITableViewDelegate, UITableViewDataSource {
     
@@ -14,9 +17,9 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var accountTableView: UITableView!
     @IBOutlet weak var signInBtn: UIButton!
     @IBOutlet weak var joinBtn: UIButton!
+    @IBOutlet weak var welcomeLabel: UILabel!
     
-    
-    
+//    var logOut = ManualLogin()
     public static var finalCountry : String = " "
     var finalFlag = #imageLiteral(resourceName: "Country")
     public static var finalLanguageName : String = " "
@@ -43,6 +46,7 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(clicking))
         accountImage.isUserInteractionEnabled = true
         accountImage.addGestureRecognizer(singleTap)
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,6 +54,7 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         accountTableView.reloadData() // to relaod the data everytime
     }
+    
     
     // to make the account image rounded shape
     func roundedShape() {
@@ -217,7 +222,7 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
             self.navigationController?.pushViewController(vc, animated: true)
         }
             
-        }
+    }
     }
     
     
