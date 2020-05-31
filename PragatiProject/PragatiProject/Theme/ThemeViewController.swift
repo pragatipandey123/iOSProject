@@ -19,7 +19,6 @@ class ThemeViewController: UIViewController{
     static var textColor: UIColor?
     static var buttonColour: UIColor?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
       
@@ -27,8 +26,9 @@ class ThemeViewController: UIViewController{
     }
     
     func fontStyle() {
-        
+    // The list of array to display. Can be changed dynamically
         dropDown.optionArray = UIFont.familyNames
+    // This the Closure returns Selected Index and String
         dropDown.didSelect { (SelectedFont, Index, id) in
             self.font = SelectedFont
         }
@@ -54,17 +54,26 @@ class ThemeViewController: UIViewController{
         
     }
     
-    @IBAction func themeTapped(_ sender: Any) {
+ @IBAction func themeTapped(_ sender: Any) {
         let sample = UILabel.appearance()
         let viewColor = UIView.appearance()
         let button = UIButton.appearance()
+    
+    //changing the font family of an app
         sample.font = UIFont(name: self.font ?? "San Fransico", size: 18)
-        
+    //changing background color of all the views
     viewColor.backgroundColor = ThemeViewController.backgroundColour ?? UIColor.white
-        
+    
+     //changing text color of all the labels
     sample.textColor = ThemeViewController.textColor ?? UIColor.black
-        button.backgroundColor = ThemeViewController.buttonColour ?? UIColor.systemPink
+    
+    //changing the button background color
+    button.backgroundColor = ThemeViewController.buttonColour ?? UIColor.systemPink
+    
+    //changing the button text color in normal state
     button.setTitleColor(ThemeViewController.textColor, for: .normal)
+    
+    // //changing the button text color in highlited state
     button.setTitleColor(ThemeViewController.backgroundColour, for: .highlighted)
 
     self.navigationController?.popViewController(animated: true) 

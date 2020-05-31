@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 protocol UserFunctionality {
     
-    func signupUser(Email: String, Password: String, confirmPassword: String, securityQues:String, view: UIViewController)
+ func signupUser(Email: String, Password: String, confirmPassword: String, securityQues:String, view: UIViewController)
     func loginUSer(Email: String, Password: String, view: UIViewController)
     func logoutUser(view: UIViewController)
 }
@@ -21,6 +21,7 @@ var currentUser : [String] = []
 
 class ManualLogin: UserFunctionality{
     
+    //MARK: SignUp Function
     func signupUser(Email: String, Password: String, confirmPassword: String, securityQues: String, view: UIViewController) {
         
         if UserDefaults.standard.object(forKey: "users") != nil{
@@ -33,8 +34,7 @@ class ManualLogin: UserFunctionality{
         user.append(Password)
         user.append(securityQues)
         
-        //Check for the empty labels
-        
+        //Check for empty fields
         if Email == "" || Password.isEmpty || confirmPassword.isEmpty || securityQues == ""
         {
             let alertController = UIAlertController(title: "Alert", message: "All fields are required", preferredStyle: .alert)
@@ -43,7 +43,8 @@ class ManualLogin: UserFunctionality{
             view.present(alertController, animated: true, completion: nil)
             
         }
-            //Check for password and re-typed password
+            
+        //Check whether both the passwords match
         else if Password != confirmPassword {
             let alertController = UIAlertController(title: "Alert", message: "Password does not match", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -51,9 +52,9 @@ class ManualLogin: UserFunctionality{
             view.present(alertController, animated: true, completion: nil)
         }
             
-//If the user is already logged in with an account then they need to logout to use another one
+//If the user is already logged in then they need to logout to use another one
         else if  currentUser.isEmpty == false {
-            let alertController = UIAlertController(title: "Already Signed in", message: "Kindly Log-out to use a different login account", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Alert", message: "Already Signed in", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             view.present(alertController, animated: true, completion: nil)
@@ -61,7 +62,7 @@ class ManualLogin: UserFunctionality{
             
     //If no error occurs then complete the Sign up process
         else{
-            //currentUser = user
+    
             currentUser.removeAll()
             allUsers.append(user)
             user.removeAll()
@@ -80,9 +81,9 @@ class ManualLogin: UserFunctionality{
         print(currentUser)
         print(user)
         print(allUsers)
-       
     }
     
+    //MARK: Login Function
     func loginUSer(Email: String, Password: String, view: UIViewController) {
         let k = Email
         var temp : [String]?
@@ -94,14 +95,15 @@ class ManualLogin: UserFunctionality{
         currentUser = UserDefaults.standard.object(forKey: "currentUser") as! [String]
         }
         
+        //If no user exists and tries to login
         if allUsers == [[]]
-               {
-                   let alertController = UIAlertController(title: "No user exists", message: "No one is logged in. First sign in to access the login functionality.", preferredStyle: .alert)
-                   let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                   
-                   alertController.addAction(defaultAction)
-                   view.present(alertController, animated: true, completion: nil)
-               }
+        {
+            let alertController = UIAlertController(title: "Alert", message: "No user exists. Kindly SignIn", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            alertController.addAction(defaultAction)
+            view.present(alertController, animated: true, completion: nil)
+        }
     
         for i in 0...allUsers.count-1
         {
@@ -111,13 +113,12 @@ class ManualLogin: UserFunctionality{
             }
         }
         
-        //Check for the empty labels
+        //Check for the empty fields
         
         if Email.isEmpty || Password.isEmpty
         {
-            let alertController = UIAlertController(title: "Alert", message: "Please enter all the informations. All the informations are compulsory ", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Alert", message: "Please enter all the informations. All the informations are compulsory. ", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            
             alertController.addAction(defaultAction)
             view.present(alertController, animated: true, completion: nil)
         }
@@ -125,7 +126,7 @@ class ManualLogin: UserFunctionality{
         user.append(Email ?? "")
         user.append(Password)
 
-        //If the user is already logged in with an account then they need to logout to use another one
+    //If the user is already logged in with an account then they need to logout to use another one
         if currentUser.isEmpty == false {
          let alertController = UIAlertController(title: "Alert", message: "Already logged In", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -141,12 +142,12 @@ class ManualLogin: UserFunctionality{
         }
             
          // If the password entered is wrong
-            else if temp![1] != Password{
-                let alertController = UIAlertController(title: "Password Incorrect", message: "Pleae login using the correct password. If you have forgotten your password then use the forgot password option.", preferredStyle: .alert)
-                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        else if temp![1] != Password{
+          let alertController = UIAlertController(title: "Password Incorrect", message: "Pleae login using the correct password.", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
 
-                alertController.addAction(defaultAction)
-                view.present(alertController, animated: true, completion: nil)
+            alertController.addAction(defaultAction)
+            view.present(alertController, animated: true, completion: nil)
             }
 
             //Complete the login process
@@ -168,10 +169,9 @@ class ManualLogin: UserFunctionality{
         print(currentUser)
         print(user)
         print(allUsers)
-        
-        
     }
     
+    //MARK: LogOut Function
     func logoutUser(view: UIViewController) {
         
         if UserDefaults.standard.object(forKey: "users") != nil{
@@ -181,13 +181,10 @@ class ManualLogin: UserFunctionality{
         if UserDefaults.standard.object(forKey: "currentUser") != nil{
         currentUser = UserDefaults.standard.object(forKey: "currentUser") as! [String]
         }
-        
         //If no one is currently logged in
         if currentUser.isEmpty == true {
-        
-            let alertController = UIAlertController(title: "No one Logged in", message: "Kindly Login first to logout from it", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Alert", message: "No one Logged in", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            
             alertController.addAction(defaultAction)
             view.present(alertController, animated: true, completion: nil)
         }
@@ -205,6 +202,7 @@ class ManualLogin: UserFunctionality{
         print(allUsers)
     }
     
+    //MARK: Forget Password Function
      func forgetPassword(Email: String, Password: String, confirmPassword: String, securityQues: String, view: UIViewController)
         {
             if UserDefaults.standard.object(forKey: "users") != nil{
@@ -236,47 +234,44 @@ class ManualLogin: UserFunctionality{
 
             }
             
-            //User name entered is wrong
+            //Email entered is wrong
              if temp == nil
             {
-                let alertController = UIAlertController(title: "No Such User exists", message: "The user name you have entered does not exists.", preferredStyle: .alert)
+                let alertController = UIAlertController(title: "No Such User exists", message: "The email you have entered does not exists.", preferredStyle: .alert)
                 let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 
                 alertController.addAction(defaultAction)
                 view.present(alertController, animated: true, completion: nil)
             }
             
-            //Check for password and re-typed password
+    //Check for password and confirmPassword password matches
             else if Password != confirmPassword {
-                let alertController = UIAlertController(title: "Password Do not match", message: "Please re-type the password correctly", preferredStyle: .alert)
-                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+             let alertController = UIAlertController(title: "Alert", message: "Password Do not match", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 
-                alertController.addAction(defaultAction)
-                view.present(alertController, animated: true, completion: nil)
-                
+            alertController.addAction(defaultAction)
+            view.present(alertController, animated: true, completion: nil)
             }
                 
-            //Answer to the security question is wrong
-            else if temp![2] != securityQues {
-                let alertController = UIAlertController(title: "Wrong Answer", message: "Answer to the security question is wrong. Please try again.", preferredStyle: .alert)
-                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                
-                alertController.addAction(defaultAction)
-                view.present(alertController, animated: true, completion: nil)
-                
+        //Answer to the security question is wrong
+     else if temp![2] != securityQues {
+         let alertController = UIAlertController(title: "Wrong Answer", message: "Answer to the security question is wrong.", preferredStyle: .alert)
+         let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+    
+            alertController.addAction(defaultAction)
+            view.present(alertController, animated: true, completion: nil)
+
             }
             
-            //Change the password
+            //Change the password successfully
             else
             {
-               
                 for j in 0...allUsers.count-1
                 {
                     if Email == allUsers[j][0]
                     {
                         allUsers[j].removeAll()
                         allUsers[j] += [Email , Password , securityQues]
-                        
                     }
                 }
                 
@@ -293,13 +288,11 @@ class ManualLogin: UserFunctionality{
                         }
                    myAlert.addAction(okAction);
                 view.present(myAlert, animated:true, completion:nil);
-                
             }
             currentUser.removeAll()
             allUsers.removeAll()
             print(allUsers)
         }
-
 }
 
 

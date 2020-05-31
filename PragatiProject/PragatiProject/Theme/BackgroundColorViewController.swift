@@ -22,7 +22,6 @@ class BackgroundColorViewController: UIViewController {
        colorPicker.setViewColor(UIColor.red)
     }
     
-    
     @IBAction func selectedButtonTapped(_ sender: Any) {
         ThemeViewController.backgroundColour = colorPicker.color
         print(colorPicker.color!)

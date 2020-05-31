@@ -9,7 +9,6 @@
 import UIKit
 import Firebase
 
-
 class JoinViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
@@ -31,7 +30,4 @@ class JoinViewController: UIViewController {
         register.signupUser(Email: emailTextField.text ?? "", Password: passwordTextField.text ?? "", confirmPassword: confirmPasswordTextField.text ?? "", securityQues: securityQuesTextField.text ?? "", view: self)
        
    }
-    
-    
-
 }

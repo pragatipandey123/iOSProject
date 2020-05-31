@@ -12,7 +12,8 @@ import SwiftHSVColorPicker
 class TextColorViewController: UIViewController {
 
     @IBOutlet weak var textColorView: UIView!
-     let textColorPicker = SwiftHSVColorPicker(frame: CGRect(x: 20, y: 30, width: 300, height: 400))
+    
+    let textColorPicker = SwiftHSVColorPicker(frame: CGRect(x: 20, y: 30, width: 300, height: 400))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,5 +26,4 @@ class TextColorViewController: UIViewController {
         ThemeViewController.textColor = textColorPicker.color
         self.navigationController?.popViewController(animated: true)
     }
-    
 }

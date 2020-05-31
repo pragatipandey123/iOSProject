@@ -36,9 +36,15 @@ class SignInViewController: UIViewController, GIDSignInDelegate, LoginButtonDele
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         currentuser()
-       
     }
     
+    // logIn button action
+    @IBAction func logInTapped(_ sender: UIButton) {
+
+        login.loginUSer(Email: emailText.text ?? "", Password: password.text ?? "", view: self)
+    }
+    
+    //MARK: Google SignIn
     @IBAction func googleSignTapped(_ sender: GIDSignInButton) {
         
         if Auth.auth().currentUser != nil {
@@ -46,12 +52,13 @@ class SignInViewController: UIViewController, GIDSignInDelegate, LoginButtonDele
                   
         let okAction = UIAlertAction(title:"Ok", style:UIAlertAction.Style.default, handler:nil);
                   
-                  myAlert.addAction(okAction);
-                  self.present(myAlert, animated:true, completion:nil);
+            myAlert.addAction(okAction);
+            self.present(myAlert, animated:true, completion:nil);
               }
        GIDSignIn.sharedInstance().signIn()
     }
     
+    // GDSign Delegate
       func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         print("Google Sing In")
         if let error = error {
@@ -60,7 +67,8 @@ class SignInViewController: UIViewController, GIDSignInDelegate, LoginButtonDele
         }
         guard let authentication = user.authentication else { return }
         let credential = GoogleAuthProvider.credential(withIDToken: (authentication.idToken)!, accessToken: (authentication.accessToken)!)
-    // When user is signed in
+        
+       // When user is signed in
         if Auth.auth().currentUser != nil {
             let myAlert = UIAlertController(title:"Alert", message:"Already SignIn", preferredStyle: UIAlertController.Style.alert);
             
@@ -95,22 +103,17 @@ class SignInViewController: UIViewController, GIDSignInDelegate, LoginButtonDele
         }
       }
     
+ //to show which user is logged in
     func currentuser() {
         if let currentUser = Auth.auth().currentUser {
         UserDefaults.standard.set(true, forKey: "LoggedIn")
             UserDefaults.standard.synchronize()
         userName.text = " You are login as - " + (currentUser.displayName ?? "Display name not found")
-            
         }
     }
-    
 
-    @IBAction func logInTapped(_ sender: UIButton) {
-        
-        login.loginUSer(Email: emailText.text ?? "", Password: password.text ?? "", view: self)
-
-    }
     
+//MARK: FaceBook login and logout
     func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
         if let error = error {
           print(error.localizedDescription)
@@ -128,7 +131,7 @@ class SignInViewController: UIViewController, GIDSignInDelegate, LoginButtonDele
                 
              else {
                 let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current?.tokenString ?? "")
-            Auth.auth().signIn(with: credential, completion: { (user, error) in
+              Auth.auth().signIn(with: credential, completion: { (user, error) in
               if let error = error {
                 print("Login error: \(error.localizedDescription)")
                 return
@@ -155,24 +158,21 @@ class SignInViewController: UIViewController, GIDSignInDelegate, LoginButtonDele
          LoginManager().logOut() 
             userName.alpha = 0
         try! Auth.auth().signOut()
-        
     }
     
+    //LogOut Button Action
     @IBAction func logOutTapped(_ sender: Any) {
         GIDSignIn.sharedInstance().signOut()
         try! Auth.auth().signOut()
         userName.alpha = 0
         login.logoutUser(view: self)
        
-        
     }
     
-        @IBAction func forgetPasswordTapped(_ sender: Any) {
+    //Forget Password Button Action
+    @IBAction func forgetPasswordTapped(_ sender: Any) {
             let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "ResetPasswordViewController")
             self.navigationController?.pushViewController(vc, animated: true)
         }
-    
-  
-
 }

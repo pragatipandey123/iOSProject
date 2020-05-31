@@ -179,7 +179,7 @@ class MovieSectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UICo
                 
                 cell.imageName.text = ( bestDramaModel?.results?[indexPath.row].title)
                 cell.movieType.text = "Dramatic"
-                cell.rating.text = String(describing:(bestDramaModel?.results?[indexPath.row].vote_average)!)
+            cell.rating.text = String(describing:(bestDramaModel?.results?[indexPath.row].vote_average) ?? 8.5)
 
                 let url = URL(string: "https://image.tmdb.org/t/p/w500\(bestDramaModel?.results?[indexPath.row].poster_path ?? "")")
                    let dataFetch = URLSession.shared.dataTask(with: url!) { (data, response, error) in
@@ -200,7 +200,7 @@ class MovieSectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UICo
                               
                 cell.imageName.text = ( scienceFictionModel?.results?[indexPath.row].title)
                 cell.movieType.text = "Thriller"
-                cell.rating.text = String(describing:(scienceFictionModel?.results?[indexPath.row].vote_average)!)
+            cell.rating.text = String(describing:(scienceFictionModel?.results?[indexPath.row].vote_average) ?? 9.3)
 
                 let url = URL(string: "https://image.tmdb.org/t/p/w500\(scienceFictionModel?.results?[indexPath.row].poster_path ?? "")")
                 let dataFetch = URLSession.shared.dataTask(with: url!) { (data, response, error) in
