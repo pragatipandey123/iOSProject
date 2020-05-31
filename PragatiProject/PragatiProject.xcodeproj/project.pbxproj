@@ -34,6 +34,7 @@
 		0A3C08B92434A754007B00F9 /* CountryListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C08B72434A754007B00F9 /* CountryListTableViewCell.xib */; };
 		0A3C08BC2434BD9D007B00F9 /* LanguageListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C08BA2434BD9D007B00F9 /* LanguageListTableViewCell.swift */; };
 		0A3C08BD2434BD9D007B00F9 /* LanguageListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C08BB2434BD9D007B00F9 /* LanguageListTableViewCell.xib */; };
+		0A3DAD002483B83600D77DDF /* ButtonBackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3DACFF2483B83600D77DDF /* ButtonBackgroundViewController.swift */; };
 		0A3F9E0D246D7DA8009B1669 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3F9E0C246D7DA8009B1669 /* HomeViewController.swift */; };
 		0A41FF0E24740D28006A7016 /* ListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A41FF0D24740D28006A7016 /* ListingViewController.swift */; };
 		0A41FF1624740FDB006A7016 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A41FF1524740FDB006A7016 /* CardViewController.swift */; };
@@ -41,6 +42,9 @@
 		0A41FF1A2474116F006A7016 /* CardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A41FF182474116F006A7016 /* CardTableViewCell.xib */; };
 		0A41FF1D247417AA006A7016 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A41FF1B247417AA006A7016 /* ListTableViewCell.swift */; };
 		0A41FF1E247417AA006A7016 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A41FF1C247417AA006A7016 /* ListTableViewCell.xib */; };
+		0A4363E724826D4E009FD142 /* BackgroundColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4363E624826D4E009FD142 /* BackgroundColorViewController.swift */; };
+		0A4363EA248289FA009FD142 /* TextColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4363E9248289FA009FD142 /* TextColorViewController.swift */; };
+		0A4363EC2482E06A009FD142 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4363EB2482E06A009FD142 /* ResetPasswordViewController.swift */; };
 		0A46A42924819D7F00A1CDB7 /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A46A42824819D7F00A1CDB7 /* ThemeViewController.swift */; };
 		0A472DF22475654B00746209 /* ImageSliderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A472DF02475654B00746209 /* ImageSliderCollectionViewCell.swift */; };
 		0A472DF32475654B00746209 /* ImageSliderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A472DF12475654B00746209 /* ImageSliderCollectionViewCell.xib */; };
@@ -112,6 +116,7 @@
 		0A3C08B72434A754007B00F9 /* CountryListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryListTableViewCell.xib; sourceTree = "<group>"; };
 		0A3C08BA2434BD9D007B00F9 /* LanguageListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageListTableViewCell.swift; sourceTree = "<group>"; };
 		0A3C08BB2434BD9D007B00F9 /* LanguageListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LanguageListTableViewCell.xib; sourceTree = "<group>"; };
+		0A3DACFF2483B83600D77DDF /* ButtonBackgroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ButtonBackgroundViewController.swift; path = PragatiProject/ButtonBackgroundViewController.swift; sourceTree = SOURCE_ROOT; };
 		0A3F9E0C246D7DA8009B1669 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0A41FF0D24740D28006A7016 /* ListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingViewController.swift; sourceTree = "<group>"; };
 		0A41FF1524740FDB006A7016 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
@@ -119,7 +124,10 @@
 		0A41FF182474116F006A7016 /* CardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardTableViewCell.xib; sourceTree = "<group>"; };
 		0A41FF1B247417AA006A7016 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		0A41FF1C247417AA006A7016 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
-		0A46A42824819D7F00A1CDB7 /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ThemeViewController.swift; path = PragatiProject/ThemeViewController.swift; sourceTree = SOURCE_ROOT; };
+		0A4363E624826D4E009FD142 /* BackgroundColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColorViewController.swift; sourceTree = "<group>"; };
+		0A4363E9248289FA009FD142 /* TextColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TextColorViewController.swift; path = PragatiProject/TextColorViewController.swift; sourceTree = SOURCE_ROOT; };
+		0A4363EB2482E06A009FD142 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		0A46A42824819D7F00A1CDB7 /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ThemeViewController.swift; path = PragatiProject/Theme/ThemeViewController.swift; sourceTree = SOURCE_ROOT; };
 		0A472DF02475654B00746209 /* ImageSliderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSliderCollectionViewCell.swift; sourceTree = "<group>"; };
 		0A472DF12475654B00746209 /* ImageSliderCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageSliderCollectionViewCell.xib; sourceTree = "<group>"; };
 		0A6132DD247FE04D00D40A9C /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavouriteViewController.swift; path = PragatiProject/FavouriteViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -220,6 +228,7 @@
 				0A385066246EA42800B0D8EB /* Employees */,
 				0A3982AB242D062C00CF0729 /* Account */,
 				0A6132E324800D6200D40A9C /* Favourite */,
+				0A4363E82482899F009FD142 /* Theme */,
 				0A39827D242CEA8200CF0729 /* Assets.xcassets */,
 				0A39827F242CEA8200CF0729 /* LaunchScreen.storyboard */,
 				0A7A877A247E6AF200DCD048 /* GoogleService-Info.plist */,
@@ -264,13 +273,32 @@
 				0AC7E36F2433589E00BBCF87 /* AccountTableViewCell.swift */,
 				0AC7E3702433589E00BBCF87 /* AccountTableViewCell.xib */,
 				0A19FC15246D18F400341A27 /* LocationViewController.swift */,
-				0A3982A7242D05EE00CF0729 /* JoinViewController.swift */,
-				0A7A877C247EEEBC00DCD048 /* LoginAndSignUp.swift */,
-				0A3982A9242D061700CF0729 /* SignInViewController.swift */,
-				0A46A42824819D7F00A1CDB7 /* ThemeViewController.swift */,
+				0A3DACFE2483AA7600D77DDF /* LoginAndSignUp */,
 				0A4387682435DB64009012EE /* CountryAndLanguageList */,
 			);
 			path = Account;
+			sourceTree = "<group>";
+		};
+		0A3DACFE2483AA7600D77DDF /* LoginAndSignUp */ = {
+			isa = PBXGroup;
+			children = (
+				0A7A877C247EEEBC00DCD048 /* LoginAndSignUp.swift */,
+				0A3982A7242D05EE00CF0729 /* JoinViewController.swift */,
+				0A3982A9242D061700CF0729 /* SignInViewController.swift */,
+				0A4363EB2482E06A009FD142 /* ResetPasswordViewController.swift */,
+			);
+			path = LoginAndSignUp;
+			sourceTree = "<group>";
+		};
+		0A4363E82482899F009FD142 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				0A3DACFF2483B83600D77DDF /* ButtonBackgroundViewController.swift */,
+				0A46A42824819D7F00A1CDB7 /* ThemeViewController.swift */,
+				0A4363E9248289FA009FD142 /* TextColorViewController.swift */,
+				0A4363E624826D4E009FD142 /* BackgroundColorViewController.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 		0A4387682435DB64009012EE /* CountryAndLanguageList */ = {
@@ -631,13 +659,16 @@
 				0A46A42924819D7F00A1CDB7 /* ThemeViewController.swift in Sources */,
 				0A3982AA242D061700CF0729 /* SignInViewController.swift in Sources */,
 				0A3982A8242D05EE00CF0729 /* JoinViewController.swift in Sources */,
+				0A4363EC2482E06A009FD142 /* ResetPasswordViewController.swift in Sources */,
 				0A3C08B52434A228007B00F9 /* CountryAndLanguageViewController.swift in Sources */,
 				0AC7E37C2433740800BBCF87 /* AccountTableViewCell.swift in Sources */,
+				0A4363E724826D4E009FD142 /* BackgroundColorViewController.swift in Sources */,
 				0A6132DE247FE04D00D40A9C /* FavouriteViewController.swift in Sources */,
 				0A41FF192474116F006A7016 /* CardTableViewCell.swift in Sources */,
 				0AD766CF247C16A90010B2A1 /* MovieDetailsViewController.swift in Sources */,
 				0A6132E124800D5100D40A9C /* FavouriteTableViewCell.swift in Sources */,
 				0A3F9E0D246D7DA8009B1669 /* HomeViewController.swift in Sources */,
+				0A3DAD002483B83600D77DDF /* ButtonBackgroundViewController.swift in Sources */,
 				0A3AB585247868C900164F26 /* MovieSectionTableViewCell.swift in Sources */,
 				0AC7E37A2433644000BBCF87 /* LanguageTableViewCell.swift in Sources */,
 				0A3AB0E7247D38A20046F437 /* DetailsCollectionViewCell.swift in Sources */,
@@ -654,6 +685,7 @@
 				0A398272242CEA8000CF0729 /* AppDelegate.swift in Sources */,
 				0A41FF1624740FDB006A7016 /* CardViewController.swift in Sources */,
 				0A39827C242CEA8000CF0729 /* PragatiProject.xcdatamodeld in Sources */,
+				0A4363EA248289FA009FD142 /* TextColorViewController.swift in Sources */,
 				0A398274242CEA8000CF0729 /* SceneDelegate.swift in Sources */,
 				0A3C08BC2434BD9D007B00F9 /* LanguageListTableViewCell.swift in Sources */,
 				0A7A877D247EEEBD00DCD048 /* LoginAndSignUp.swift in Sources */,

@@ -9,10 +9,8 @@
 import UIKit
 import Alamofire
 
-
 class MovieSectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
        
-        
     @IBOutlet weak var movieCollectionView: UICollectionView!
         
     var popularityModel: OtherMovies?
@@ -21,9 +19,10 @@ class MovieSectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UICo
     var kidsModel: OtherMovies?
     var comedyModel: OtherMovies?
     var view: UIViewController?
-    static var otherMovies : Details?
-    static var type = -1
-    static var finalSections: OtherMovies?
+    
+    static var otherMovies : Details?//to pass the details of selected movie on MovieDetailViewController
+    static var type = -1 // to diffrentiate which type of movie details has to be shown
+    static var finalSections: OtherMovies?//to store the whole model so that the on MovieDetailViewController movies can be shown in collection view of users also liked this
       
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,7 +38,6 @@ class MovieSectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UICo
            
         let nib = UINib(nibName: "MovieCollectionViewCell", bundle: nil)
             movieCollectionView.register(nib, forCellWithReuseIdentifier: "movieCollection")
-            
         }
 
         override func setSelected(_ selected: Bool, animated: Bool) {
@@ -56,15 +54,15 @@ class MovieSectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UICo
                 case .failure(let error):
                         print(error)
                 case .success(let data):
-                    do {
-                        let decoder = JSONDecoder()
+                do {
+                    let decoder = JSONDecoder()
                             decoder.keyDecodingStrategy = .useDefaultKeys
-                        let result = try decoder.decode(OtherMovies.self, from: data)
-                            self?.popularityModel = result
-                            print(result)
-                        } catch { print(error) }
-                    }
-                    self?.movieCollectionView.reloadData()
+                    let result = try decoder.decode(OtherMovies.self, from: data)
+                    self?.popularityModel = result
+                        print(result)
+                    } catch { print(error) }
+                }
+                  self?.movieCollectionView.reloadData()
             }
         }
     
@@ -129,8 +127,7 @@ class MovieSectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UICo
     }
     
     func getComdeyMoviesData() {
-        
-   AF.request("https://api.themoviedb.org/3/discover/movie?with_genres=18&primary_release_year=2014&api_key=820016b7116f872f5f27bf56f9fdfb66", method: .get, parameters: nil, encoding: URLEncoding.default)
+    AF.request("https://api.themoviedb.org/3/discover/movie?with_genres=18&primary_release_year=2014&api_key=820016b7116f872f5f27bf56f9fdfb66", method: .get, parameters: nil, encoding: URLEncoding.default)
             .responseData { [weak self] response in
         switch response.result {
             case .failure(let error):
@@ -149,15 +146,16 @@ class MovieSectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UICo
     }
     
         
-        //MARK: CollectionView Delegates and DataSources
-        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return popularityModel?.results?.count ?? 0
-        }
+    //MARK: CollectionView Delegates and DataSources
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return popularityModel?.results?.count ?? 0
+     }
         
-        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            
-            if collectionView.tag == 1 {
-                 let cell  = movieCollectionView.dequeueReusableCell(withReuseIdentifier: "movieCollection", for: indexPath) as! MovieCollectionViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+ //here tag works as indexPath.section to show different movies in different section
+        //Popular Data
+        if collectionView.tag == 1 {
+            let cell  = movieCollectionView.dequeueReusableCell(withReuseIdentifier: "movieCollection", for: indexPath) as! MovieCollectionViewCell
             cell.imageName.text = ( popularityModel?.results?[indexPath.row].title)
             cell.movieType.text = "Action"
             cell.rating.text = String(describing:(popularityModel?.results?[indexPath.row].vote_average)!)
@@ -175,6 +173,7 @@ class MovieSectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UICo
 
                   return cell
             }
+            //Best Drama Data
              else if collectionView.tag == 2 {
                  let cell  = movieCollectionView.dequeueReusableCell(withReuseIdentifier: "movieCollection", for: indexPath) as! MovieCollectionViewCell
                 
@@ -195,6 +194,7 @@ class MovieSectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UICo
 
                       return cell
             }
+            //Science Fiction Data
                else if collectionView.tag == 3 {
                 let cell  = movieCollectionView.dequeueReusableCell(withReuseIdentifier: "movieCollection", for: indexPath) as! MovieCollectionViewCell
                               
@@ -215,13 +215,13 @@ class MovieSectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UICo
 
                 return cell
             }
-                
+            //Kids Data
             else if collectionView.tag == 4 {
             let cell  = movieCollectionView.dequeueReusableCell(withReuseIdentifier: "movieCollection", for: indexPath) as! MovieCollectionViewCell
                                             
             cell.imageName.text = ( kidsModel?.results?[indexPath.row].title)
             cell.movieType.text = "Entertainment"
-                cell.rating.text = String(describing:(kidsModel?.results?[indexPath.row].vote_average)!)
+            cell.rating.text = String(describing:(kidsModel?.results?[indexPath.row].vote_average) ?? 8.0)
 
                 let url = URL(string: "https://image.tmdb.org/t/p/w500\(kidsModel?.results?[indexPath.row].poster_path ?? "")")
             let dataFetch = URLSession.shared.dataTask(with: url!) { (data, response, error) in
@@ -236,12 +236,13 @@ class MovieSectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UICo
 
             return cell
             }
+            // Comedy Data
         else if collectionView.tag == 5 {
             let cell  = movieCollectionView.dequeueReusableCell(withReuseIdentifier: "movieCollection", for: indexPath) as! MovieCollectionViewCell
                                                                 
             cell.imageName.text = ( comedyModel?.results?[indexPath.row].title)
             cell.movieType.text = "Comedy"
-                    cell.rating.text = String(describing:(kidsModel?.results?[indexPath.row].vote_average)!)
+            cell.rating.text = String(describing:(comedyModel?.results?[indexPath.row].vote_average) ?? 9.0)
 
             let url = URL(string: "https://image.tmdb.org/t/p/w500\(comedyModel?.results?[indexPath.row].poster_path ?? "")")
             let dataFetch = URLSession.shared.dataTask(with: url!) { (data, response, error) in
@@ -256,8 +257,8 @@ class MovieSectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UICo
 
                 return cell
             }
-                
-            else {
+            
+        else {
                  let cell  = movieCollectionView.dequeueReusableCell(withReuseIdentifier: "movieCollection", for: indexPath) as! MovieCollectionViewCell
                 return cell
             }
@@ -295,9 +296,8 @@ class MovieSectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UICo
     }
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "MovieDetailsViewController")
-               view?.navigationController!.pushViewController(vc, animated: true)
-}
-    
+        view?.navigationController!.pushViewController(vc, animated: true)
+}    
 }
 
 

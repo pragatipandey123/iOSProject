@@ -111,6 +111,8 @@ PODS:
   - nanopb/decode (1.30905.0)
   - nanopb/encode (1.30905.0)
   - PromisesObjC (1.2.8)
+  - SwiftHSVColorPicker (1.1.1)
+  - SwiftKeychainWrapper (3.4.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -120,6 +122,8 @@ DEPENDENCIES:
   - GoogleMaps
   - GoogleSignIn
   - iOSDropDown
+  - SwiftHSVColorPicker
+  - SwiftKeychainWrapper
 
 SPEC REPOS:
   trunk:
@@ -146,6 +150,8 @@ SPEC REPOS:
     - iOSDropDown
     - nanopb
     - PromisesObjC
+    - SwiftHSVColorPicker
+    - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
@@ -171,7 +177,9 @@ SPEC CHECKSUMS:
   iOSDropDown: c10a761f9a00c3f1cc9d3bce43ae504628e2f692
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
+  SwiftHSVColorPicker: 69c9028dea168e0f8ee2439d31a899cf1df95678
+  SwiftKeychainWrapper: 6fc49fbf7d4a6b0772917acb0e53a1639f6078d6
 
-PODFILE CHECKSUM: 6a845efbb8ee6d8d3a388e4ca1f2d41fc66cd833
+PODFILE CHECKSUM: a802693d717df43687cd511427962bfdfe599d7d
 
 COCOAPODS: 1.9.1

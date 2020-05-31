@@ -23,20 +23,14 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         
 }
-    
-    
+    //MARK: CLLocationManager Delegates
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
     
         guard status == .authorizedWhenInUse else {
             return
-            
         }
-        
         locationManager.startUpdatingLocation()
-      
-       
         mapView.settings.myLocationButton = true
-        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -44,14 +38,7 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
         guard locations.first != nil else {
         return
     }
-        
         mapView.camera = GMSCameraPosition.camera(withLatitude: 26.8467, longitude: 80.9462, zoom: 12)
-    
-
-       locationManager.stopUpdatingLocation()
-        
-        
-   
-
+        locationManager.stopUpdatingLocation()
 }
 }

@@ -11,6 +11,7 @@ import Firebase
 import GoogleSignIn
 import FBSDKLoginKit
 
+
 class SignInViewController: UIViewController, GIDSignInDelegate, LoginButtonDelegate{
   
     @IBOutlet weak var fbLogin: FBLoginButton!
@@ -21,7 +22,7 @@ class SignInViewController: UIViewController, GIDSignInDelegate, LoginButtonDele
     @IBOutlet weak var joinButton: UIButton!
     @IBOutlet weak var logOutButton: UIButton!
     
-//    var logIn = ManualLogin()
+    var login = ManualLogin()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,7 @@ class SignInViewController: UIViewController, GIDSignInDelegate, LoginButtonDele
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         currentuser()
+       
     }
     
     @IBAction func googleSignTapped(_ sender: GIDSignInButton) {
@@ -102,11 +104,12 @@ class SignInViewController: UIViewController, GIDSignInDelegate, LoginButtonDele
         }
     }
     
-//
-//    @IBAction func logInTapped(_ sender: UIButton) {
-//        logIn.loginUser(Email: emailText.text ?? "", Password: password.text ?? "", view: self)
-//
-//    }
+
+    @IBAction func logInTapped(_ sender: UIButton) {
+        
+        login.loginUSer(Email: emailText.text ?? "", Password: password.text ?? "", view: self)
+
+    }
     
     func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
         if let error = error {
@@ -115,13 +118,14 @@ class SignInViewController: UIViewController, GIDSignInDelegate, LoginButtonDele
         }
         else {
              if Auth.auth().currentUser != nil {
-                       let myAlert = UIAlertController(title:"Alert", message:"Already SignIn", preferredStyle: UIAlertController.Style.alert);
+            let myAlert = UIAlertController(title:"Alert", message:"Already SignIn", preferredStyle: UIAlertController.Style.alert);
                        
-                       let okAction = UIAlertAction(title:"Ok", style:UIAlertAction.Style.default, handler:nil);
+            let okAction = UIAlertAction(title:"Ok", style:UIAlertAction.Style.default, handler:nil);
                        
-                       myAlert.addAction(okAction);
-                       self.present(myAlert, animated:true, completion:nil);
-                   }
+            myAlert.addAction(okAction);
+            self.present(myAlert, animated:true, completion:nil);
+            }
+                
              else {
                 let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current?.tokenString ?? "")
             Auth.auth().signIn(with: credential, completion: { (user, error) in
@@ -148,16 +152,27 @@ class SignInViewController: UIViewController, GIDSignInDelegate, LoginButtonDele
 
     func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
         print("UserLoggedOut")
-        LoginManager().logOut()
+         LoginManager().logOut() 
+            userName.alpha = 0
         try! Auth.auth().signOut()
-        userName.alpha = 0
+        
     }
     
     @IBAction func logOutTapped(_ sender: Any) {
         GIDSignIn.sharedInstance().signOut()
         try! Auth.auth().signOut()
         userName.alpha = 0
-    }
+        login.logoutUser(view: self)
+       
         
+    }
+    
+        @IBAction func forgetPasswordTapped(_ sender: Any) {
+            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "ResetPasswordViewController")
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    
+  
 
 }

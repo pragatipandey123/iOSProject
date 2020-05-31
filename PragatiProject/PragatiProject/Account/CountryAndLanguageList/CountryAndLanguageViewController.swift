@@ -30,33 +30,32 @@ class CountryAndLanguageViewController: UIViewController, UITableViewDelegate,UI
         let nib1 = UINib.init(nibName: "CountryListTableViewCell", bundle: nil)
         countryListTableView.register(nib1, forCellReuseIdentifier: "countryListCell")
         let nib2 = UINib.init(nibName: "LanguageListTableViewCell", bundle: nil)
-               countryListTableView.register(nib2, forCellReuseIdentifier: "languageList")
+        countryListTableView.register(nib2, forCellReuseIdentifier: "languageList")
     }
-    
-    
 
     //MARK: TABLE VIEW DELEGATES AND DATA SOURCES
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return countriesData.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        if CountryAndLanguageViewController.select == "Country" {
-                       let cell = tableView.dequeueReusableCell(withIdentifier: "countryListCell", for: indexPath) as! CountryListTableViewCell
-                        cell.setCountry(text: countriesData[indexPath.row])
-            // using API for flags
-            if let url = URL(string: "https://www.countryflags.io/\(countryCode[indexPath.row])/shiny/64.png") {
+ if CountryAndLanguageViewController.select == "Country" {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "countryListCell", for: indexPath) as! CountryListTableViewCell
+        cell.setCountry(text: countriesData[indexPath.row])
+    
+        // using API for flags
+        if let url = URL(string: "https://www.countryflags.io/\(countryCode[indexPath.row])/shiny/64.png") {
 
-               URLSession.shared.dataTask(with: url) { (data, response, error) in
-                   if let data = data {
-                       DispatchQueue.main.async {
-                              //passing an image
-                           cell.setFlag(image: UIImage(data: data) ?? self.flag)
-                           cell.flagList.contentMode = .scaleAspectFill
+         URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let data = data {
+                DispatchQueue.main.async {
+                    //passing an image
+                cell.setFlag(image: UIImage(data: data) ?? self.flag)
+                cell.flagList.contentMode = .scaleAspectFill
                        }
-                   }
+                 }
                }.resume()
            }
             return cell
@@ -72,10 +71,9 @@ class CountryAndLanguageViewController: UIViewController, UITableViewDelegate,UI
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         countryListTableView.deselectRow(at: indexPath, animated: true)
-         
         if CountryAndLanguageViewController.select == "Country" {
             let countryName = (countryCode[indexPath.row].uppercased())
-            
+        
             AccountViewController.finalCountry = countryName
         }
             
@@ -85,7 +83,6 @@ class CountryAndLanguageViewController: UIViewController, UITableViewDelegate,UI
         }
         self.navigationController?.popViewController(animated: true)
     }
-
 }
                        
         

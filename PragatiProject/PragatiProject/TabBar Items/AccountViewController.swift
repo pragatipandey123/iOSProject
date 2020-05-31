@@ -19,7 +19,6 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var joinBtn: UIButton!
     @IBOutlet weak var welcomeLabel: UILabel!
     
-//    var logOut = ManualLogin()
     public static var finalCountry : String = " "
     var finalFlag = #imageLiteral(resourceName: "Country")
     public static var finalLanguageName : String = " "
@@ -41,7 +40,6 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
         let nib3 = UINib(nibName: "LanguageTableViewCell", bundle: nil)
         accountTableView.register(nib3, forCellReuseIdentifier: "languageCell")
         
-        
         //to make the imageView clickable
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(clicking))
         accountImage.isUserInteractionEnabled = true
@@ -53,8 +51,20 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
         super.viewWillAppear(animated)
         
         accountTableView.reloadData() // to relaod the data everytime
+        //To show which user is currently logged in
+        if UserDefaults.standard.object(forKey: "currentUser") != nil{
+            currentUser = UserDefaults.standard.object(forKey: "currentUser") as! [String]
+        }
+        if (currentUser.isEmpty == false)
+        {
+            let user:String = String(describing: currentUser[0].prefix(8))
+            welcomeLabel.text = "Welcome \(user)"
+        }
+        else
+        {
+            welcomeLabel.text = "Welcome!"
+        }
     }
-    
     
     // to make the account image rounded shape
     func roundedShape() {
@@ -63,7 +73,6 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
         accountImage.clipsToBounds = true
     }
 
-   
     // selector function of an ImageView
     @objc func clicking() {
         
@@ -129,7 +138,6 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
     self.navigationController!.pushViewController(vc, animated: true)
     }
     
-    
    //MARK: TABLE VIEW DELEGATES AND DATA SOURCES
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellLabelArray[section].count
@@ -138,28 +146,28 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
     //cell for row at index path
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-         if indexPath.section == 1 && indexPath.row == 0 {
-               let cell = accountTableView.dequeueReusableCell(withIdentifier: "countryCell", for: indexPath) as! CountryTableViewCell
-               cell.setImageCountry(image: cellImageArray[1][0])
-               cell.setLabelCountry(text: cellLabelArray[1][0])
+     if indexPath.section == 1 && indexPath.row == 0 {
+        let cell = accountTableView.dequeueReusableCell(withIdentifier: "countryCell", for: indexPath) as! CountryTableViewCell
+            cell.setImageCountry(image: cellImageArray[1][0])
+            cell.setLabelCountry(text: cellLabelArray[1][0])
             cell.setFinalCountry(text: AccountViewController.finalCountry)
             
-            if let url = URL(string: "https://www.countryflags.io/\(AccountViewController.finalCountry)/flat/64.png") {
+        if let url = URL(string: "https://www.countryflags.io/\(AccountViewController.finalCountry)/flat/64.png") {
                 
-                URLSession.shared.dataTask(with: url) { (data, response, error) in
-                    if let data = data {
-                        DispatchQueue.main.async {
-                            cell.setCountryFlagImageView(image: UIImage(data: data) ?? self.finalFlag)
-                            cell.finalFlagImage.contentMode = .scaleAspectFill
-                        }
-                    }
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+                if let data = data {
+                DispatchQueue.main.async {
+                    cell.setCountryFlagImageView(image: UIImage(data: data) ?? self.finalFlag)
+                    cell.finalFlagImage.contentMode = .scaleAspectFill
+                     }
+                  }
                 }.resume()
             }
              return cell
            }
            
-           else if indexPath.section == 1 && indexPath.row == 1 {
-               let cell = accountTableView.dequeueReusableCell(withIdentifier: "languageCell", for: indexPath) as! LanguageTableViewCell
+        else if indexPath.section == 1 && indexPath.row == 1 {
+            let cell = accountTableView.dequeueReusableCell(withIdentifier: "languageCell", for: indexPath) as! LanguageTableViewCell
                cell.setImageLanguage(image: cellImageArray[1][1])
                cell.setLabelLanguage(text: cellLabelArray[1][1])
                cell.setFinalLanguage(text: String(AccountViewController.finalLanguageName.prefix(3)))
@@ -167,10 +175,10 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
            }
     
            else {
-                   let cell = accountTableView.dequeueReusableCell(withIdentifier: "accountPageCell", for: indexPath) as! AccountTableViewCell
-                  cell.setLabel(text:cellLabelArray[indexPath.section][indexPath.row])
-                  cell.setImage(image: cellImageArray[indexPath.section][indexPath.row])
-               return cell
+                let cell = accountTableView.dequeueReusableCell(withIdentifier: "accountPageCell", for: indexPath) as! AccountTableViewCell
+        cell.setLabel(text:cellLabelArray[indexPath.section][indexPath.row])
+            cell.setImage(image: cellImageArray[indexPath.section][indexPath.row])
+            return cell
            }
     }
     
@@ -199,6 +207,12 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
+        if indexPath.section == 0 && indexPath.row == 3 {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "EmployeesViewController")
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
         if indexPath.section == 1 && indexPath.row == 0 {
 
             CountryAndLanguageViewController.select = "Country"
@@ -213,7 +227,6 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "CountryAndLanguageViewController")
                 self.navigationController?.pushViewController(vc, animated: true)
-        
         }
         
         if indexPath.section == 1 && indexPath.row == 4 {

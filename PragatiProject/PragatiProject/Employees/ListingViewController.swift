@@ -9,10 +9,11 @@
 import UIKit
 import Alamofire
 
- struct BaseModel: Codable {
+struct BaseModel: Codable {
      var status: String?
      var data: [Employee]?
  }
+
 struct Employee: Codable {
   var id: String?
   var employee_name: String?
@@ -35,9 +36,9 @@ class ListingViewController: UIViewController,UITableViewDelegate,UITableViewDat
         let nib = UINib.init(nibName: "ListTableViewCell", bundle: nil)
         listTableView.register(nib, forCellReuseIdentifier: "listCell")
         getEmployeeData()
-        
     }
     
+    //Getting the data of employess through api
     func getEmployeeData() {
         AF.request("http://dummy.restapiexample.com/api/v1/employees", method: .get, parameters: nil, encoding: URLEncoding.default)
             .responseData { [weak self] response in
@@ -57,6 +58,7 @@ class ListingViewController: UIViewController,UITableViewDelegate,UITableViewDat
         }
     }
     
+    //MARK: TableView Delegates and DataSources
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return responseModel?.data?.count ?? 0
     }
@@ -68,9 +70,4 @@ class ListingViewController: UIViewController,UITableViewDelegate,UITableViewDat
         }
         return UITableViewCell()
     }
-    
-    
-
-    
-
 }

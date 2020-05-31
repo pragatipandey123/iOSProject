@@ -20,11 +20,9 @@ class ListTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
     
     func configure(data: Employee?) {
-        
         id.text = "ID: \(data?.id ?? "")"
         name.text = "Name: \(data?.employee_name ?? "")"
         

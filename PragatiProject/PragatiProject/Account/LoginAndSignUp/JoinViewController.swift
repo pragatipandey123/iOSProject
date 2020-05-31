@@ -7,28 +7,30 @@
 //
 
 import UIKit
+import Firebase
+
 
 class JoinViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
+    @IBOutlet weak var securityQuesTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     
-//    var joinIn = ManualLogin()
+    var register = ManualLogin()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
     @IBAction func signUpTapped(_ sender: UIButton) {
-//
-//        joinIn.signUpUser(Email: emailTextField.text ?? "", Password: passwordTextField.text ?? "", ConfirmPassword: confirmPasswordTextField.text ?? "", view: self)
-//
+        
+        register.signupUser(Email: emailTextField.text ?? "", Password: passwordTextField.text ?? "", confirmPassword: confirmPasswordTextField.text ?? "", securityQues: securityQuesTextField.text ?? "", view: self)
+       
    }
-    
     
     
 

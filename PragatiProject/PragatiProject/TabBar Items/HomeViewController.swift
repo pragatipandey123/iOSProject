@@ -8,10 +8,7 @@
 
 import UIKit
 
-
-
 class HomeViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
-  
   
     @IBOutlet weak var movieTableView: UITableView!
     
@@ -20,19 +17,15 @@ class HomeViewController: UIViewController,UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         movieTableView.delegate = self
         movieTableView.dataSource = self
        
-
     let nib1 = UINib(nibName: "MovieSectionTableViewCell", bundle: nil)
     movieTableView.register(nib1, forCellReuseIdentifier: "movieCell")
         let nib2 = UINib(nibName: "SliderTableViewCell", bundle: nil)
         movieTableView.register(nib2, forCellReuseIdentifier: "slider")
-    
     }
-    
-    
+
     //MARK: TableViewDelegates and DataSources
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -50,9 +43,7 @@ class HomeViewController: UIViewController,UITableViewDelegate, UITableViewDataS
             cell.view = self
             return cell
         }
-        
     }
-    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return moviename.count
@@ -65,7 +56,6 @@ class HomeViewController: UIViewController,UITableViewDelegate, UITableViewDataS
         if indexPath.section == 0 {
                    return 280
                }
-               
                return 210
            }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

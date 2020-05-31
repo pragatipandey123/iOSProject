@@ -9,6 +9,8 @@ target 'PragatiProject' do
   pod 'GoogleSignIn'
   pod 'FBSDKLoginKit'
   pod 'iOSDropDown'
+  pod 'SwiftHSVColorPicker'
+  pod 'SwiftKeychainWrapper'
 
   # Pods for PragatiProject
 

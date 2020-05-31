@@ -18,14 +18,12 @@ class FavouriteViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Favourites Movies"
         favouriteTableView.delegate = self
         favouriteTableView.dataSource = self
 
         let nib = UINib(nibName: "FavouriteTableViewCell", bundle: nil)
         favouriteTableView.register(nib, forCellReuseIdentifier: "favouriteCell")
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -36,7 +34,8 @@ class FavouriteViewController: UIViewController, UITableViewDelegate, UITableVie
         print("1-\(favListArray)")
     }
 
-
+//MARK: TableView Delegates and DataSources
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return favListArray.count
     }
@@ -52,18 +51,13 @@ class FavouriteViewController: UIViewController, UITableViewDelegate, UITableVie
                 cell.favouriteMovieImage.image = finalImage
                 cell.favouriteMovieImage.contentMode = .scaleToFill
                     }
-
         }
         dataFetch.resume()
-        
      cell.favouriteMovieName.text = favListArray[indexPath.row][1]
         return cell
-                
-
 }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
      return 100
         
     }
-    
 }

@@ -26,7 +26,7 @@ class SliderTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+       
         imageCollectionView.delegate = self
         imageCollectionView.dataSource =  self
         setTimer()
@@ -39,7 +39,7 @@ class SliderTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        
     }
     
     //Set Timer to switch between the Images
@@ -47,7 +47,8 @@ class SliderTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         _ = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(SliderTableViewCell.changeImage), userInfo: nil,
     repeats: true)
       }
-
+    
+     // Timer selector
     @objc func changeImage() {
            pageSliding.numberOfPages = model?.results.count ?? 0
            self.pageSliding.currentPage = counter
@@ -66,7 +67,7 @@ class SliderTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
            }
        }
     
-    //Getting the data from the api
+    //Getting the data of trending movies from the api
     func getData() {
     AF.request("https://api.themoviedb.org/3/trending/all/day?api_key=820016b7116f872f5f27bf56f9fdfb66", method: .get, parameters: nil, encoding: URLEncoding.default)
               .responseData { [weak self] response in
@@ -119,11 +120,8 @@ class SliderTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         view?.navigationController!.pushViewController(vc, animated: true)
     }
     
-       
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
                  
            return CGSize(width: imageCollectionView.frame.width, height: 300)
            }
-       
-    
 }

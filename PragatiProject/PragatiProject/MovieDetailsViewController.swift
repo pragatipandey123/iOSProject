@@ -20,8 +20,6 @@ class MovieDetailsViewController: UIViewController,UICollectionViewDelegate, UIC
     @IBOutlet weak var year: UILabel!
     @IBOutlet weak var detailsCollection: UICollectionView!
     
-//    var suggestedMovie : OtherMovies?
-    
     var newfav: [String] = []
     var views: UIViewController?
     var favListArray: [[String]] = []
@@ -30,9 +28,9 @@ class MovieDetailsViewController: UIViewController,UICollectionViewDelegate, UIC
     override func viewDidLoad() {
         super.viewDidLoad()
          getDetails()
-        views = self
-        detailsCollection.delegate = self
-        detailsCollection.dataSource = self
+         views = self
+         detailsCollection.delegate = self
+         detailsCollection.dataSource = self
         
         let nib = UINib(nibName: "DetailsCollectionViewCell", bundle: nil)
         detailsCollection.register(nib, forCellWithReuseIdentifier: "detailsCell")
@@ -52,24 +50,25 @@ class MovieDetailsViewController: UIViewController,UICollectionViewDelegate, UIC
         print(favListArray)
     }
     
+    //To show the detailed view of movies
     func getDetails() {
-        if MovieSectionTableViewCell.type == 1 {
-        newfav.append(MovieSectionTableViewCell.otherMovies?.poster_path ?? "")
-//        newfav.append(MovieSectionTableViewCell.otherMovies?.backdrop_path ?? "")
+     
+    if MovieSectionTableViewCell.type == 1 {
+   newfav.append(MovieSectionTableViewCell.otherMovies?.poster_path ?? "")
             
-            let url = URL(string: "https://image.tmdb.org/t/p/w500\(MovieSectionTableViewCell.otherMovies?.poster_path! ?? "")")
-               let dataFetch = URLSession.shared.dataTask(with: url!) { (data, response, error) in
-                guard let response = data else {return}
+       let url = URL(string: "https://image.tmdb.org/t/p/w500\(MovieSectionTableViewCell.otherMovies?.poster_path! ?? "")")
+        let dataFetch = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+        guard let response = data else {return}
                 
-                let finalImage = UIImage(data: response)
-                 DispatchQueue.main.async {
-                    self.movieImage.image = finalImage
-                    self.movieImage.contentMode = .scaleToFill
+        let finalImage = UIImage(data: response)
+        DispatchQueue.main.async {
+            self.movieImage.image = finalImage
+            self.movieImage.contentMode = .scaleToFill
                 }
             }
-                dataFetch.resume()
+            dataFetch.resume()
             
-        newfav.append(MovieSectionTableViewCell.otherMovies?.title ?? "")
+    newfav.append(MovieSectionTableViewCell.otherMovies?.title ?? "")
             
             movieName.text = MovieSectionTableViewCell.otherMovies?.title
             movieDescription.text = MovieSectionTableViewCell.otherMovies?.overview
@@ -86,7 +85,6 @@ class MovieDetailsViewController: UIViewController,UICollectionViewDelegate, UIC
                       }
                   }
         else {
-//            newfav.append(SliderTableViewCell.trending?.backdrop_path ?? "")
             newfav.append(SliderTableViewCell.trending?.poster_path ?? "")
             
             let url = URL(string: "https://image.tmdb.org/t/p/w500\(SliderTableViewCell.trending?.poster_path ?? "")")!
@@ -100,55 +98,59 @@ class MovieDetailsViewController: UIViewController,UICollectionViewDelegate, UIC
                 }
             }
                 dataFetch.resume()
-            if SliderTableViewCell.trending?.media_type == "tv"{
+    if SliderTableViewCell.trending?.media_type == "tv"{
                 
-                newfav.append(SliderTableViewCell.trending?.name ?? "")
+    //appending the data in newfav to show in favourite table view
+        newfav.append(SliderTableViewCell.trending?.name ?? "")
                 
-                movieName.text = SliderTableViewCell.trending?.name
-                year.text = String((SliderTableViewCell.trending?.first_air_date)?.prefix(4) ?? "")
-            }
-            else {
-                newfav.append(SliderTableViewCell.trending?.title ?? "")
+        movieName.text = SliderTableViewCell.trending?.name
+        year.text = String((SliderTableViewCell.trending?.first_air_date)?.prefix(4) ?? "")
+        }
+        
+        else {
+    //appending the data in newfav to show in favourite table view
+        newfav.append(SliderTableViewCell.trending?.title ?? "")
                 
-                movieName.text = SliderTableViewCell.trending?.title
-                 year.text = String((SliderTableViewCell.trending?.release_date)?.prefix(4) ?? "")
-            }
+        movieName.text = SliderTableViewCell.trending?.title
+        year.text = String((SliderTableViewCell.trending?.release_date)?.prefix(4) ?? "")
+        }
            
-            movieDescription.text = SliderTableViewCell.trending?.overview
-            ratings.text = String(describing:(SliderTableViewCell.trending?.popularity)!)
-           
+        movieDescription.text = SliderTableViewCell.trending?.overview
+        ratings.text = String(describing:(SliderTableViewCell.trending?.popularity)!)
             
-            if(SliderTableViewCell.trending?.original_language == "en")
-                      {
-                          languageType.text = "English"
-                      }
-                      else
-                      {
-                          languageType.text = "Others"
-                      }
+        if(SliderTableViewCell.trending?.original_language == "en")
+         {
+            languageType.text = "English"
+            }
+        else {
+            languageType.text = "Others"
+         }
         }
         
         if favListArray.contains(newfav) {
         favouriteButton.setImage(UIImage(named: "FilledHeart.png"), for: .normal)
-
-               }
+         }
+            
         else{
-                favouriteButton.setImage(UIImage(named: "EmptyHeart.png"), for: .normal)
-               }
-        
-               favouriteButton.contentMode = .scaleAspectFit
-        
+            favouriteButton.setImage(UIImage(named: "EmptyHeart.png"), for: .normal)
+            }
+            favouriteButton.contentMode = .scaleAspectFit
         }
-
+    
+    //MARK: CollectionView Delegates and DataSources
         
-        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//            return suggestedMovie?.results.count ?? 0
-            return 20
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if MovieSectionTableViewCell.type == 1 {
+            return MovieSectionTableViewCell.finalSections?.results?.count ?? 0
+            }
+            else {
+                return SliderTableViewCell.final?.results.count ?? 0
+            }
         }
         
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if MovieSectionTableViewCell.type == 1 {
-            let cell = detailsCollection.dequeueReusableCell(withReuseIdentifier: "detailsCell", for: indexPath) as! DetailsCollectionViewCell
+          let cell = detailsCollection.dequeueReusableCell(withReuseIdentifier: "detailsCell", for: indexPath) as! DetailsCollectionViewCell
             
             let url = URL(string: "https://image.tmdb.org/t/p/w500\(MovieSectionTableViewCell.finalSections?.results?[indexPath.row].poster_path ?? "")")!
         
@@ -161,7 +163,6 @@ class MovieDetailsViewController: UIViewController,UICollectionViewDelegate, UIC
         }
     }
             dataFetch.resume()
-           
             return cell
         }
         else {
@@ -178,8 +179,22 @@ class MovieDetailsViewController: UIViewController,UICollectionViewDelegate, UIC
                 }
             }
                     dataFetch.resume()
-                   
                     return cell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if MovieSectionTableViewCell.type == 1 {
+            MovieSectionTableViewCell.otherMovies = MovieSectionTableViewCell.finalSections?.results?[indexPath.row]
+            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "MovieDetailsViewController")
+            views?.navigationController!.pushViewController(vc, animated: true)
+        }
+        else{
+            SliderTableViewCell.trending = SliderTableViewCell.final?.results[indexPath.row]
+            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "MovieDetailsViewController")
+            views?.navigationController!.pushViewController(vc, animated: true)
         }
     }
         
@@ -188,35 +203,34 @@ class MovieDetailsViewController: UIViewController,UICollectionViewDelegate, UIC
             return CGSize(width: 200, height: 130)
         }
     
-        
+      //Favourite button action
     @IBAction func favouriteTapped(_ sender: UIButton) {
 
         if favListArray.contains(newfav) {
         favListArray.remove(at: favListArray.firstIndex(of: newfav)!)
-            counter = counter - 1
+        counter = counter - 1
          }
 
         else{
-                   counter = counter + 1
-                   favListArray.append(newfav)
-               }
+              counter = counter + 1
+              favListArray.append(newfav)
+            }
+        
+        //saving the values with specific key
+        UserDefaults.standard.set(counter, forKey: "count")
+        UserDefaults.standard.set(favListArray, forKey: "favList")
 
-               UserDefaults.standard.set(counter, forKey: "count")
-               UserDefaults.standard.set(favListArray, forKey: "favList")
-
-               if favListArray.contains(newfav) {
-                   favouriteButton.setImage(UIImage(named: "FilledHeart.png"), for: .normal)
-
-               }
-               else{
+        if favListArray.contains(newfav) {
+            favouriteButton.setImage(UIImage(named: "FilledHeart.png"), for: .normal)
+            }
+            
+            else{
                  favouriteButton.setImage(UIImage(named: "EmptyHeart.png"), for: .normal)
                }
-
+        
                favouriteButton.contentMode = .scaleAspectFit
                print(favListArray)
-        
            }
-    
     }
 
 

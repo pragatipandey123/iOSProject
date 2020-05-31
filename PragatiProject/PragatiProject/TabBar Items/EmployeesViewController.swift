@@ -22,7 +22,6 @@ class EmployeesViewController: UIViewController {
         
     }
     
-    
     @IBAction func segmentControlAction(_ sender: UISegmentedControl) {
         
         if sender.selectedSegmentIndex == 0 {

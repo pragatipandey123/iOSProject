@@ -56,12 +56,11 @@ class CardViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                         print(result)
                     } catch { print(error) }
                 }
-                
                 self?.dataTableView.reloadData()
-                
         }
     }
     
+    //MARK: TableView Delegates and DataSources
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return responseModel?.data?.count ?? 0
     }
@@ -88,7 +87,6 @@ class CardViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             cell.contentView.layer.cornerRadius = 10
             
             cell.configureCell(data: responseModel?.data?[indexPath.row])
-                   
             return cell
         }
         return UITableViewCell()
@@ -97,8 +95,4 @@ class CardViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 130
     }
-    
-
-
-
 }

@@ -9,9 +9,7 @@
 import UIKit
 
 class CardTableViewCell: UITableViewCell {
-    
-    
-    
+
     @IBOutlet weak var employeeID: UILabel!
     @IBOutlet weak var employeeName: UILabel!
     @IBOutlet weak var employeeSalary: UILabel!
@@ -22,14 +20,13 @@ class CardTableViewCell: UITableViewCell {
         // Initialization code
         
     }
-    
-    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
+    
     func configureCell(data: EmployeeModel?) {
            employeeID.text = "ID: \(data?.id ?? "")"
         employeeName.text = "Name: \(data?.employee_name ?? "")"
